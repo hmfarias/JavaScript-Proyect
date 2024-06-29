@@ -42,7 +42,7 @@
 		<!-- Start Link to My Css --------------------------------------->
 		<link rel="stylesheet" href="../css/styles.css" />
 		<!-- End Link to My Css --------------------------------------->
-		<title>Contacto</title>
+		<title>Recibo de Haberes</title>
 	</head>
 	<body class="bg-info-subtle">
 		<header>
@@ -112,159 +112,65 @@
 			<!-- Start PAGE BANNER --------------------------------------->
 			<div class="titleBanner p-5 text-white">
 				<div class="col">
-					<h5>CONTACTO</h5>
+					<h5>RECIBO DE HABERES</h5>
 				</div>
 			</div>
 			<!-- End PAGE BANNER ----------------------------------------->
 
-			<section class="contactSection py-5 textShadow">
-				<!-- Start contact header -->
+			<section class="receiptSection py-5 textShadow">
+				<!-- Start receipt header -->
 				<div class="container bg-dark p-2 mt-3 text-center rounded-4">
 					<p class="text-warning fw-bold fs-4 ms-2 mb-1 fst-italic">
-						No dude en escribirnos
+						Generación de Recibo de Haberes
 					</p>
 					<p class="text-light fs-5 ms-2 mb-1 fst-italic">
-						Nuestro equipo de atención al cliente se encuentra a su entera disposición.
+						Deberá ingresar el mes y el año
 					</p>
 					<p class="text-light fs-5 ms-2 mb-3 fst-italic">
-						Podemos ofrecerle una solución flexible y adaptable a su necesidad.
+						El sistema mostrará los recibos disponibles para ese período
 					</p>
 				</div>
-				<!-- End contact header -->
+				<!-- End receipt header -->
+
 				<div class="container">
-					<div class="row mt-3">
-						<div class="contactDiv col-md-4 px-0 mb-2">
-							<div class="bg-dark p-3 rounded-3 text-light me-md-2">
-								<h4>CONTÁCTENOS</h4>
-								<div class="contacto">
-									<p>+54 351 7576367</p>
-									<p>rfseguridadintegral@gmail.com</p>
-									<p>Félix Frias 344 - PB - Local 1 - Bº General Paz - Córdoba Capital</p>
-								</div>
-								<div class="redesSociales">
-									<h4>REDES SOCIALES</h4>
-									<ul>
-										<li>
-											<a href="https://www.instagram.com/">
-												<i
-													class="fa-brands fa-instagram fa-fade fa-2xl"
-													style="color: #ffffff"
-													alt="logo instagram"
-												></i>
-											</a>
-										</li>
-										<li>
-											<a href="https://www.facebook.com/">
-												<i
-													class="fa-brands fa-facebook fa-fade fa-2xl"
-													style="color: #ffffff"
-													alt="logo facebook"
-												></i>
-											</a>
-										</li>
-										<li>
-											<a href="https://www.linkedin.com">
-												<i
-													class="fa-brands fa-linkedin fa-fade fa-2xl"
-													style="color: #ffffff"
-													alt="logo linkedin"
-												></i>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Formulario de Contacto  -->
-						<div class="formDiv col-md-8 bg-dark rounded-3 p-3 text-light">
-							<p class="justified">
-								También puede comunicarse, completando el siguiente formulario y un
-								representante lo contactará a la brevedad
-							</p>
-
-							<form
-								class="contactForm"
-								id="contactForm"
-								action=""
-								method="post"
-								enctype="application/x-www-form-urlencoded"
-							>
-								<div class="mb-3 mt-3">
-									<label for="nombre" class="form-label">Nombre / Razón Social (*)</label>
-									<input
-										type="text"
-										class="form-control"
-										id="nombre"
-										placeholder="Ingrese nombre"
-										name="nombre"
-										required
-									/>
-								</div>
-								<div class="mb-3">
-									<label for="dni" class="form-label">DNI / CUIT</label>
+					<!-- Formulario de Contacto  -->
+					<div class="formDiv col-md-6 bg-dark rounded-3 p-3 mt-2 text-light">
+						<form
+							class="contactForm"
+							id="contactForm"
+							action=""
+							method="post"
+							enctype="application/x-www-form-urlencoded"
+						>
+							<div class="row">
+								<div class="col-md-6 mb-3">
+									<label for="ano" class="form-label">AÑO</label>
 									<input
 										type="number"
 										class="form-control"
-										id="dni"
-										placeholder="Ingrese DNI o CUIT"
-										name="dni"
+										id="ano"
+										placeholder="Ingrese AÑO"
+										name="ano"
 										required
 									/>
 								</div>
-								<div class="mb-3">
-									<label for="domicilio" class="form-label">Domicilio</label>
+								<div class="col-md-6 mb-3">
+									<label for="ano" class="form-label">MES</label>
 									<input
-										type="text"
+										type="number"
 										class="form-control"
-										id="domicilio"
-										placeholder="Ingrese domicilio"
-										name="domicilio"
+										id="mes"
+										placeholder="Ingrese MES"
+										name="mes"
 										required
 									/>
 								</div>
-								<label for="telefono" class="form-label">Teléfono</label>
-								<input
-									type="text"
-									class="form-control"
-									id="telefono"
-									placeholder="Ingrese telefono (fijo o celular)"
-									name="telefono"
-									required
-								/>
-								<div class="mb-3">
-									<label for="email" class="form-label">Email:</label>
-									<input
-										type="email"
-										class="form-control"
-										id="email"
-										placeholder="Enter email"
-										name="email"
-									/>
-								</div>
+							</div>
 
-								<div class="mb-3">
-									<label for="comment">Comments:</label>
-									<textarea
-										class="form-control"
-										rows="5"
-										id="comment"
-										name="text"
-									></textarea>
-								</div>
-								<div class="mb-3">
-									<label for="adjuntarArchivo">Adjuntar Curriculum (PDF)</label>
-									<input
-										class="form-control"
-										type="file"
-										accept="application/pdf"
-										id="adjuntarArchivo"
-										name="adjuntarArchivo"
-									/>
-								</div>
-								<button type="submit" class="btn btn-primary">Submit</button>
-							</form>
-						</div>
+							<button type="submit" class="btn btn-primary" id="btnBuscarRecibos">
+								Buscar Recibos
+							</button>
+						</form>
 					</div>
 				</div>
 			</section>
@@ -384,6 +290,7 @@
 			<!-- End copyright banner -->
 		</footer>
 		<!-- End Footer ---------------------------------------------->
+
 		<!-- Start BS 5.3.3 scripts ------------------------------------------------>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -392,6 +299,8 @@
 		></script>
 		<!-- End BS 5.3.3 scripts -------------------------------------------------->
 
-		<!-- <script src="../js/contacto.js"></script> -->
+		<!-- Start local scripts ------------------------------------------------>
+		<script type="module" src="../js/recibos.js"></script>
+		<!-- End local scripts -------------------------------------------------->
 	</body>
 </html>
