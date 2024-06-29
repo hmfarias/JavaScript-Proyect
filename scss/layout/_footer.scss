@@ -1,0 +1,56 @@
+/* FOOTER --------------------------------------------------------- */
+
+.logoFooterDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: small;
+}
+
+.logo {
+	width: 77px;
+}
+.contactDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.contacto {
+	li {
+		display: flex;
+		align-items: baseline;
+		i {
+			margin-right: 5px;
+		}
+		p {
+			margin: 7px 0 0 0;
+		}
+	}
+}
+.redesSociales {
+	ul {
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 10px;
+		}
+	}
+}
+.socialLogo {
+	width: 25px;
+	height: auto;
+}
+.mapDiv {
+	border-style: outset;
+	height: 350px;
+}
+.copyLogo {
+	width: 15px;
+	margin-right: 3px;
+}
+.copyrightDiv {
+	p {
+		font-size: small;
+	}
+}
+/* END FOOTER ----------------------------------------------------- */

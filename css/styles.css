@@ -1,0 +1,275 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  background-color: #d4cece;
+  background-image: linear-gradient(180deg, #d4cece 0%, #c5c1c2 49%, #dedada 100%);
+}
+
+.justified {
+  text-align: justify;
+}
+
+.textShadow {
+  text-shadow: 0 0 5px #000;
+}
+
+.titleBanner {
+  background-image: url(../assets/images/slide-01.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+/*START ANIMATIONS ------------------------------------------- */
+/*START ANIMATED BUTTON -------------------------------------- */
+/* Variables use ----------------------------------------------*/
+/* End Variables use ----------------------------------------------*/
+.btnAnimated {
+  /* creo la animación nombre=pulse dura 1.5s y se repite */
+  animation: pulse 1.5s infinite;
+}
+
+/* una vez creada la animación, debo crear los keyframes */
+@keyframes pulse {
+  /* voy dando estilos en cada momento de la animación */
+  /* 0% es antes de que empiece */
+  0% {
+    /* con esto hago que el boton se haga apenas seis puntos pequeño (1 es igual, 1.5 es un 50% mas grande, 0.5 es un 50% mas chico, etc etc) */
+    transform: scale(0.94);
+    /* tambien agrego una pequeña sombra con transparencia */
+    box-shadow: 0 0 0 0 rgba(250, 249, 249, 0.15);
+  }
+  /* ahora avanzo en la animación hasta el 70% */
+  70% {
+    /* con esto hago que el boton se haga de tamaño normal (1 es igual, 1.5 es un %0% mas grande, 0.5 es un 50% mas chico, etc etc) */
+    transform: scale(1);
+    /* tambien agrego una pequeña sombra con transparencia  */
+    box-shadow: 0 0 0 7px rgba(250, 249, 249, 0.2);
+  }
+  /* ahora configuro el final de la animacion */
+  100% {
+    /* con esto hago que el boton se haga apenas seis puntos pequeño (1 es igual, 1.5 es un %0% mas grande, 0.5 es un 50% mas chico, etc etc) */
+    transform: scale(0.94);
+    /* tambien agrego una pequeña sombra con transparencia  */
+    box-shadow: 0 0 0 0 rgba(250, 249, 249, 0.15);
+  }
+}
+/*END ANIMATED BUTTON -------------------------------------- */
+/*START ANIMATED SLIDE ------------------------------------- */
+@keyframes slide {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+/*END ANIMATED SLIDE ---------------------------------------- */
+/*END ANIMATIONS -------------------------------------------- */
+/* NAVBAR ---------------------------------------------------- */
+/* LOGO ------------------------------------------------------ */
+.logo {
+  width: 50px;
+}
+
+.navbar-brand {
+  padding-left: 0px;
+}
+
+@media only screen and (min-width: 576px) {
+  .logo {
+    width: 70px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navbar-brand {
+    padding-left: 30px;
+  }
+}
+/* END LOGO ------------------------------------------------------ */
+.nav-link:hover {
+  color: #fbc500;
+  background-color: var(--color-primary-accent);
+}
+
+@media only screen and (max-width: 575px) {
+  .nav_ul-bg {
+    background-color: #646464;
+  }
+}
+/* END NAVBAR ------------------------------------------------------ */
+/* JUMBOTRON ----------------------------------------------------- */
+.jumbotron {
+  background-image: url(../assets/images/slide-02.webp);
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+.jumbotron .jumboText h1 {
+  color: #fbc500;
+  text-shadow: 0 0 5px #000;
+}
+.jumbotron .jumboText p {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 575px) {
+  .jumbotron h2 {
+    font-size: 20px;
+  }
+}
+/* END JUMBOTRON -------------------------------------------------- */
+/*START SLIDEBAR -----------------------------*/
+.logosCustomers {
+  overflow: hidden;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+  /*para generar un efecto disolución tanto al inicio como al final del slide*/
+  /*para que la animación se detenga al posicionarse sobre alguna*/
+}
+.logosCustomers .logosSlide {
+  display: inline-block;
+  animation: 20s slide infinite linear;
+  animation-play-state: initial;
+}
+.logosCustomers .logosSlide img {
+  height: 60px;
+  margin: 0 40px;
+}
+.logosCustomers::before, .logosCustomers::after {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logosCustomers::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffc107);
+}
+.logosCustomers::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffc107);
+}
+.logosCustomers:hover .logosSlide {
+  animation-play-state: paused;
+}
+
+/* para que no acomode los iconos en varios renglones*/
+.customerSlide {
+  white-space: nowrap;
+}
+
+/* para que la disolución de los logos no sea demasiado ancha en pantallas pequeñas */
+@media only screen and (max-width: 575px) {
+  .logosCustomers::before,
+  .logosCustomers::after {
+    width: 80px;
+  }
+}
+/*END SLIDEBAR -----------------------------*/
+/* FOOTER --------------------------------------------------------- */
+.logoFooterDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+}
+
+.logo {
+  width: 77px;
+}
+
+.contactDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contacto li {
+  display: flex;
+  align-items: baseline;
+}
+.contacto li i {
+  margin-right: 5px;
+}
+.contacto li p {
+  margin: 7px 0 0 0;
+}
+
+.redesSociales ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px;
+}
+
+.socialLogo {
+  width: 25px;
+  height: auto;
+}
+
+.mapDiv {
+  border-style: outset;
+  height: 350px;
+}
+
+.copyLogo {
+  width: 15px;
+  margin-right: 3px;
+}
+
+.copyrightDiv p {
+  font-size: small;
+}
+
+/* END FOOTER ----------------------------------------------------- */
+/* genera un efecto de escala al pasar el puntero del mouse */
+.securityArt {
+  transition: all 0.9s;
+}
+.securityArt:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------------*/
+/* ABOUT US -------------------------------------------------- */
+.misVisVal {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: 150px;
+}
+
+.whoWeAreSeccion img {
+  width: 100%; /* or max-width: 100%; */
+  height: auto;
+}
+
+/* END ABOUT US -------------------------------------------------- */
+/* genera un efecto de escala al pasar el puntero del mouse */
+.securityServ {
+  transition: all 0.9s;
+}
+.securityServ:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------------*/
+/* START COTIZATION PAGE -------------------------------------------------- */
+.cotizaSection {
+  padding-top: 70px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cotizaSection .logoWP i {
+  font-size: 80px;
+}
+
+/* END COTIZATION PAGE ---------------------------------------------------- *//*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,31 @@
+/* NAVBAR ---------------------------------------------------- */
+/* LOGO ------------------------------------------------------ */
+.logo {
+	width: 50px;
+}
+.navbar-brand {
+	padding-left: 0px;
+}
+@media only screen and (min-width: 576px) {
+	.logo {
+		width: 70px;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.navbar-brand {
+		padding-left: 30px;
+	}
+}
+/* END LOGO ------------------------------------------------------ */
+
+.nav-link:hover {
+	color: #fbc500;
+	background-color: var(--color-primary-accent);
+}
+
+@media only screen and (max-width: 575px) {
+	.nav_ul-bg {
+		background-color: #646464;
+	}
+}
+/* END NAVBAR ------------------------------------------------------ */

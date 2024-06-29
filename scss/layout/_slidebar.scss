@@ -1,0 +1,54 @@
+/*START SLIDEBAR -----------------------------*/
+.logosCustomers {
+	overflow: hidden;
+	padding: 20px 0;
+	white-space: nowrap;
+	position: relative;
+	.logosSlide {
+		display: inline-block;
+		animation: 20s slide infinite linear;
+		animation-play-state: initial;
+
+		img {
+			height: 60px;
+			margin: 0 40px;
+		}
+	}
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		width: 200px;
+		height: 100%;
+		content: '';
+		z-index: 2;
+	}
+	/*para generar un efecto disolución tanto al inicio como al final del slide*/
+	&::before {
+		left: 0;
+		background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffc107);
+	}
+	&::after {
+		right: 0;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffc107);
+	}
+	/*para que la animación se detenga al posicionarse sobre alguna*/
+	&:hover {
+		.logosSlide {
+			animation-play-state: paused;
+		}
+	}
+}
+
+/* para que no acomode los iconos en varios renglones*/
+.customerSlide {
+	white-space: nowrap;
+}
+/* para que la disolución de los logos no sea demasiado ancha en pantallas pequeñas */
+@media only screen and (max-width: 575px) {
+	.logosCustomers::before,
+	.logosCustomers::after {
+		width: 80px;
+	}
+}
+/*END SLIDEBAR -----------------------------*/

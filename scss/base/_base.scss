@@ -1,0 +1,22 @@
+html {
+	scroll-behavior: smooth;
+}
+
+main {
+	background-color: #d4cece;
+	background-image: linear-gradient(180deg, #d4cece 0%, #c5c1c2 49%, #dedada 100%);
+}
+
+.justified {
+	text-align: justify;
+}
+
+.textShadow {
+	text-shadow: 0 0 5px #000;
+}
+
+.titleBanner {
+	background-image: url(../assets/images/slide-01.webp);
+	background-size: cover;
+	background-position: center;
+}

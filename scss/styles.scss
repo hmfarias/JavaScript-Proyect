@@ -1,0 +1,19 @@
+//GENERAL BASES OF THE SITE ----------------------------------
+@import 'base/typography';
+@import 'base/base';
+@import 'base/animations';
+// END GENERAL BASES OF THE SITE -----------------------------
+
+//LAYOUTS OF THE SITE ----------------------------------------
+@import 'layout/navigation';
+@import 'layout/header';
+@import 'layout/slidebar';
+@import 'layout/footer';
+//END LAYOUTS OF THE SITE ------------------------------------
+
+//PAGES OF THE SITE ------------------------------------------
+@import 'pages/home';
+@import 'pages/aboutus';
+@import 'pages/servicios';
+@import 'pages/cotization';
+//END PAGES OF THE SITE --------------------------------------
