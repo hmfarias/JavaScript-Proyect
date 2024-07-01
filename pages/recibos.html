@@ -176,38 +176,52 @@
 
 				<section class="detailReceiptSection container mt-3">
 					<div class="row" id="detalleRecibos">
-						<!-- Start employ 1-->
-						<!-- <article class="col-md-4 receipt my-4">
-							<div class="card pt-2 px-2 mt-1 rounded-3 bg-secondary-subtle h-100">
-								<img
-									src="../assets/images/user1.webp"
-									class="card-img-top rounded-3"
-									alt="imagen usuario"
-								/>
-								<div class="card-body">
-									<h5 class="card-title">Nombre del empleado</h5>
-									<p class="card-text justified">
-										ID: <br />
-										CUIL: <br />
-										DNI: <br />
-										FECHA NACIMIENTO: <br />
-										FECHA ALTA: <br />
-										FECHA BAJA: <br />
-										EMAIL: <br />
-										SUVICO: <br />
-										------------------- <br />
-										COBERTURA: <br />
-										HORAS TRABAJADAS: <br />
-										FERIADOS TRABAJADOS: <br />
-										HORAS NOCTURNAS: <br />
-									</p>
-									<a href="#" class="btn btn-primary">Recibo</a>
-								</div>
-							</div>
-						</article> -->
-						<!-- End employ 1 -->
+						<!-- Start employees-->
+						<!-- render here -->
+						<!-- End employyees -->
 					</div>
 				</section>
+
+				<!-- start Modal -------------------------------->
+				<div
+					class="modal fade"
+					id="reciboModal"
+					tabindex="-1"
+					aria-labelledby="reciboModalLabel"
+					aria-hidden="true"
+				>
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="reciboModalLabel">Recibo de Sueldo</h5>
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								>
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div id="recibo-content">
+									<!-- Start content of the receipt ------>
+									<!-- render here -->
+									<!-- End content of the receipt -->
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" id="download-pdf" class="btn btn-primary">
+									Descargar PDF
+								</button>
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+									Cerrar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end Modal --------------------------------------->
 			</section>
 		</main>
 
@@ -333,6 +347,8 @@
 			crossorigin="anonymous"
 		></script>
 		<!-- End BS 5.3.3 scripts -------------------------------------------------->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
 		<!-- Start local scripts ------------------------------------------------>
 		<script type="module" src="../js/recibos.js"></script>

@@ -5,8 +5,6 @@ import { Empleado, Cobertura } from './classes.js';
 const SUELDO_BASICO = 356000;
 const PRESENTISMO = 112000;
 const REMUNERATIVO = 123000;
-const FERIADO = 0;
-const NOCTURNIDAD = 0;
 
 const VIATICOS = 219000;
 
@@ -163,8 +161,6 @@ export {
 	SUELDO_BASICO,
 	PRESENTISMO,
 	REMUNERATIVO,
-	FERIADO,
-	NOCTURNIDAD,
 	VIATICOS,
 	NO_REMUNERATIVO,
 	PORCE_JUBILACION,
