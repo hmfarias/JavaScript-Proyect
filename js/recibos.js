@@ -10,5 +10,5 @@ const ANO_MES_FORM = document.getElementById('anoMesForm');
 // Agrego listener para el evento submit del formulario en el que se selecciona MES y AÑO a consultar
 ANO_MES_FORM.addEventListener('submit', (evento) => {
 	evento.preventDefault();
-	renderizaEmpleados(MES.value, ANO.value);
+	renderizaEmpleados(MES.value.padStart(2, '0'), ANO.value);
 });

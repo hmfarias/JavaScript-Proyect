@@ -186,9 +186,7 @@ const generarRecibo = (event) => {
 
 	//START ARMADO DEL HTML A RENDERIZAR ---------------------------------------------------------------
 	const HTML = `
-	<h5>Nombre: ${EMPLEADO_ACTIVO.nombre} DNI: ${EMPLEADO_ACTIVO.dni} CUIL: ${
-		EMPLEADO_ACTIVO.cuil
-	} </h5> 
+	<h5 id = "nombreRecibo">${EMPLEADO_ACTIVO.nombre} </h5> 
 	
 	<p>
 	LEGAJO: ${EMPLEADO_ACTIVO.id}<br />
@@ -270,23 +268,37 @@ const generarRecibo = (event) => {
 	modal.show();
 
 	//tomo el boton de descarga de la ventana modal y le asigno un listener para el evento click
+	const DOMbtnDownload = document.getElementById('download-pdf');
+
+	//Esto es para que el nombre del pdf a descargar no sea generico sino que tenga el año, mes y nombre .pdf
+	DOMbtnDownload.setAttribute('keyMes', MES);
+	DOMbtnDownload.setAttribute('keyAno', ANO);
+	DOMbtnDownload.setAttribute('keyNombre', EMPLEADO_ACTIVO.nombre);
+
 	document.getElementById('download-pdf').addEventListener('click', downloadReceipt);
 };
 
 /**
- * * FUNCION: downloadReceipt genera la descarga del recibo en formato pdf (utiliza libreria htm2pdf())
- * @param elemento (es el elemento que se desa imprimr)
+ * * FUNCION: downloadReceipt genera la descarga del recibo en formato pdf (utiliza libreria html2pdf())
+ * @param event (es el objeto event donde se pueden extraer los atributos necesarios para asignar el nombre al recibo)
  */
-const downloadReceipt = () => {
-	const element = document.getElementById('recibo-content');
+const downloadReceipt = (event) => {
+	console.log(event);
+	const ELEMENT = document.getElementById('recibo-content');
+	const NOMBRE_RECIBO = `${event.target.getAttribute(
+		'keyAno'
+	)}-${event.target.getAttribute('keyMes')}-${event.target.getAttribute(
+		'keyNombre'
+	)}.pdf`;
+
 	const opt = {
 		margin: 1,
-		filename: 'recibo_de_sueldo.pdf',
+		filename: NOMBRE_RECIBO,
 		image: { type: 'jpeg', quality: 0.98 },
 		html2canvas: { scale: 2 },
 		jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
 	};
-	html2pdf().set(opt).from(element).save();
+	html2pdf().set(opt).from(ELEMENT).save();
 };
 
 /**
