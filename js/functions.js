@@ -283,7 +283,6 @@ const generarRecibo = (event) => {
  * @param event (es el objeto event donde se pueden extraer los atributos necesarios para asignar el nombre al recibo)
  */
 const downloadReceipt = (event) => {
-	console.log(event);
 	const ELEMENT = document.getElementById('recibo-content');
 	const NOMBRE_RECIBO = `${event.target.getAttribute(
 		'keyAno'
