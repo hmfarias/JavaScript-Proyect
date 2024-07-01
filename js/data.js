@@ -41,7 +41,7 @@ const EMPLEADOS = [
 	),
 	new Empleado(
 		'2',
-		'20-22222222-7',
+		'27-22222222-7',
 		'22222222',
 		'ORTEGA',
 		'ANDREA',
@@ -89,7 +89,7 @@ const EMPLEADOS = [
 	),
 	new Empleado(
 		'5',
-		'20-55555555-7',
+		'27-55555555-7',
 		'55555555',
 		'CARRANZA',
 		'MONICA',
@@ -105,7 +105,7 @@ const EMPLEADOS = [
 	),
 	new Empleado(
 		'6',
-		'20-66666666-7',
+		'27-66666666-7',
 		'66666666',
 		'ALVAREZ',
 		'ANALIA',
