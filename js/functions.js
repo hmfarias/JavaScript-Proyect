@@ -326,8 +326,13 @@ const renderizaEmpleados = (mes, ano) => {
 			let empleadoRecibo = EMPLEADOS.find(
 				(empleado) => empleado.dni === coberturaElemento.dni
 			);
-			//uno los dos objetos anteriores
-			let recibo = { ...empleadoRecibo, ...coberturaRecibo }; //uno los objetos
+			//objeto mes y año
+			let objPeriodo = {
+				ano: ano,
+				mes: mes,
+			};
+			//uno los tres objetos anteriores
+			let recibo = { ...empleadoRecibo, ...coberturaRecibo, ...objPeriodo }; //uno los objetos
 			//agrego el nuevo objeto al array datosRecibos que sera el que despues voy a ordenar por nombre
 			datosRecibos.push(recibo);
 		}
@@ -339,6 +344,10 @@ const renderizaEmpleados = (mes, ano) => {
 
 	// guardo el conjunto de recibos en local storage por si se lo quiere volver a procesar
 	localStorage.setItem('ultimoLote', JSON.stringify(datosRecibosOrdenados));
+	localStorage.setItem('ultimoMes', mes);
+	localStorage.setItem('ultimoAno', ano);
+
+	// localStorage.setItem('ultimoPeriodo', objPeriodo);
 
 	//modifico el DOM
 	datosRecibosOrdenados.forEach((element) => {

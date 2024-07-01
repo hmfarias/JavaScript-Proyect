@@ -14,5 +14,9 @@ ANO_MES_FORM.addEventListener('submit', (evento) => {
 	renderizaEmpleados(MES.value.padStart(2, '0'), ANO.value);
 });
 
-//Agrego listener para el boton que carga desde el local Storage el ultimo lote trabajado
-BTN_ULTIMO_LOTE.addEventListener('click', () => {});
+//Agrego listener para el boton que carga desde el local Storage el ultimo periodo trabajado
+BTN_ULTIMO_LOTE.addEventListener('click', () => {
+	let ultimoAno = localStorage.getItem('ultimoAno');
+	let ultimoMes = localStorage.getItem('ultimoMes');
+	renderizaEmpleados(ultimoMes, ultimoAno);
+});
