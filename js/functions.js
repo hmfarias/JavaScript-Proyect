@@ -313,6 +313,15 @@ const renderizaEmpleados = (mes, ano) => {
 
 	let datosRecibos = []; //en este array estarán los datos de cada recibo - resultado de unir COBERTURAS Y EMPLEADOS
 
+	if (!COBERTURAS.some((cobertura) => cobertura.ano === ano && cobertura.mes === mes)) {
+		Swal.fire({
+			icon: 'warning',
+			title: 'Oops...',
+			text: 'No existen coberturas para el período seleccionado',
+		});
+		return;
+	}
+
 	//recorro el array de coberturas, operando sobre las que correspondan al mes y año ingresados
 	COBERTURAS.forEach((coberturaElemento) => {
 		if (coberturaElemento.mes === mes && coberturaElemento.ano === ano) {
