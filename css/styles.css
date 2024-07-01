@@ -229,6 +229,7 @@ main {
 }
 
 /* END FOOTER ----------------------------------------------------- */
+/* START HOME PAGE -------------------------------------------------- */
 /* genera un efecto de escala al pasar el puntero del mouse */
 .securityArt {
   transition: all 0.9s;
@@ -238,7 +239,8 @@ main {
 }
 
 /* ---------------------------------------------------------*/
-/* ABOUT US -------------------------------------------------- */
+/* END HOME PAGE -------------------------------------------------- */
+/* ABOUT US PAGE -------------------------------------------------- */
 .misVisVal {
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -250,7 +252,8 @@ main {
   height: auto;
 }
 
-/* END ABOUT US -------------------------------------------------- */
+/* END ABOUT US PAGE -------------------------------------------------- */
+/* START SERVICIOS PAGE -----------------------------------------------*/
 /* genera un efecto de escala al pasar el puntero del mouse */
 .securityServ {
   transition: all 0.9s;
@@ -260,6 +263,7 @@ main {
 }
 
 /* ---------------------------------------------------------*/
+/* END SERVICIOS PAGE -----------------------------------------------*/
 /* START COTIZATION PAGE -------------------------------------------------- */
 .cotizaSection {
   padding-top: 70px;
@@ -272,4 +276,15 @@ main {
   font-size: 80px;
 }
 
-/* END COTIZATION PAGE ---------------------------------------------------- *//*# sourceMappingURL=styles.css.map */
+/* END COTIZATION PAGE ---------------------------------------------------- */
+/* START RECIBOS PAGE -----------------------------------------------*/
+/* genera un efecto de escala al pasar el puntero del mouse */
+.receipt {
+  transition: all 0.9s;
+}
+.receipt:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------------*/
+/* END RECIBOS PAGE -----------------------------------------------*//*# sourceMappingURL=styles.css.map */

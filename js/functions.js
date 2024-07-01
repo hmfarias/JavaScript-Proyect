@@ -1,4 +1,87 @@
+/**IMPORTO ARRAYs DE EMPLEADOS Y COBERTURAS pues los necesito en las funciones */
+import { EMPLEADOS, COBERTURAS } from './data.js';
+
 //FUNCIONES A UTILIZAR ----------------------------------------------------------------------------------------------
+/**
+ * * FUNCION: renderizarEmpleados renderiza en el DOM el detalle de cards de empleados mostrándolos en orden alfabético
+ * Para poder mostrar el listado de empleados ordenado por nombre, es necesario construir un nuevo array con los datos de los empleados y las coberturas unidas, para luego ordenarlo por nombre utilizando SORT
+ * PARÁMETROS:
+ * @param mes (es el numero de mes ingresado en el formulario)
+ * @param ano (es el numero de año ingresado en el formulario)
+ */
+const renderizaEmpleados = (mes, ano) => {
+	let DOMdetalleRecibos = document.getElementById('detalleRecibos'); //traigo el objeto contenedor del DOM
+	DOMdetalleRecibos.innerHTML = ''; //elimino lo que pudiera tener
+
+	let datosRecibos = []; //en este array estarán los datos de cada recibo - resultado de unir COBERTURAS Y EMPLEADOS
+
+	//recorro el array de coberturas, operando sobre las que correspondan al mes y año ingresados
+	COBERTURAS.forEach((coberturaElemento) => {
+		if (coberturaElemento.mes === mes && coberturaElemento.ano === ano) {
+			//objeto cobertura individual
+			let coberturaRecibo = {
+				horas: coberturaElemento.horas,
+				feriados: coberturaElemento.feriados,
+				horasNocturnas: coberturaElemento.horasNocturnas,
+			};
+			//objeto empleado individual
+			let empleadoRecibo = EMPLEADOS.find(
+				(empleado) => empleado.dni === coberturaElemento.dni
+			);
+			//uno los dos objetos anteriores
+			let recibo = { ...empleadoRecibo, ...coberturaRecibo }; //uno los objetos
+			//agrego el nuevo objeto al array datosRecibos que sera el que despues voy a ordenar por nombre
+			datosRecibos.push(recibo);
+		}
+	});
+	//ordeno por nombre el array con los datos de los recibos para el mes y año solicitados
+	datosRecibos.sort((a, b) => {
+		if (a.nombre < b.nombre) {
+			return -1;
+		}
+		if (a.nombre > b.nombre) {
+			return 1;
+		}
+		return 0;
+	});
+
+	datosRecibos.forEach((element) => {
+		const HTML = `
+						<!-- Start employ-->
+						<article class="col-md-4 receipt my-4">
+							<div class="card pt-2 px-2 mt-1 rounded-3 bg-secondary-subtle h-100">
+								<img
+									src="../assets/images/${element.foto}"
+									class="card-img-top rounded-3"
+									alt="imagen empleado"
+								/>
+								<div class="card-body">
+									<h5 class="card-title">${element.nombre}</h5>
+									<p class="card-text justified">
+										ID: ${element.id}<br />
+										CUIL: ${element.cuil} <br />
+										DNI: ${element.dni}<br />
+										FECHA NACIMIENTO: ${element.fechaNacimiento}<br />
+										FECHA ALTA: ${element.fechaAlta} <br />
+										FECHA BAJA: ${element.fechaBaja} <br />
+										EMAIL: ${element.email} <br />
+										SUVICO: ${element.suvico} <br />
+										------------------- <br />
+										COBERTURA: <br />
+										HORAS TRABAJADAS:  ${element.horas}<br />
+										FERIADOS TRABAJADOS: ${element.feriados}<br />
+										HORAS NOCTURNAS: ${element.horasNocturnas} <br />
+									</p>
+									<a href="#" class="btn btn-primary" marcador=${element.id}>Recibo</a>
+								</div>
+							</div>
+						</article>
+						<!-- End user -->
+			`;
+		DOMdetalleRecibos.innerHTML += HTML;
+	});
+};
+
 /**
  * *FUNCIÓN: pedirValor solicita mediante prompt un determinado valor.
  * PARÁMETROS:
@@ -7,9 +90,6 @@
  * * Devuelve el valor para el nombreValor ingresado, luego de validarlo
  *
  */
-
-/**IMPORTO EL ARRAY DE EMPLEADOS pues lo necesito para hacer validaciones */
-import { EMPLEADOS } from './data.js';
 
 const pedirValor = (nombreValor, mes) => {
 	let continuar;
@@ -340,6 +420,7 @@ const formatearNumero = (numero) => {
 
 //FIN FUNCIONES A UTILIZAR ------------------------------------------------------------------------------------------
 export {
+	renderizaEmpleados,
 	pedirValor,
 	calculaHorasBase,
 	calcularDiasTrabajados,

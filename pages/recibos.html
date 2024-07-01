@@ -117,7 +117,7 @@
 			</div>
 			<!-- End PAGE BANNER ----------------------------------------->
 
-			<section class="receiptSection py-5 textShadow">
+			<section class="receiptSection py-5">
 				<!-- Start receipt header -->
 				<div class="container bg-dark p-2 mt-3 text-center rounded-4">
 					<p class="text-warning fw-bold fs-4 ms-2 mb-1 fst-italic">
@@ -137,23 +137,12 @@
 					<div class="formDiv col-md-6 bg-dark rounded-3 p-3 mt-2 text-light">
 						<form
 							class="contactForm"
-							id="contactForm"
+							id="anoMesForm"
 							action=""
 							method="post"
 							enctype="application/x-www-form-urlencoded"
 						>
 							<div class="row">
-								<div class="col-md-6 mb-3">
-									<label for="ano" class="form-label">AÑO</label>
-									<input
-										type="number"
-										class="form-control"
-										id="ano"
-										placeholder="Ingrese AÑO"
-										name="ano"
-										required
-									/>
-								</div>
 								<div class="col-md-6 mb-3">
 									<label for="ano" class="form-label">MES</label>
 									<input
@@ -165,6 +154,17 @@
 										required
 									/>
 								</div>
+								<div class="col-md-6 mb-3">
+									<label for="ano" class="form-label">AÑO</label>
+									<input
+										type="number"
+										class="form-control"
+										id="ano"
+										placeholder="Ingrese AÑO"
+										name="ano"
+										required
+									/>
+								</div>
 							</div>
 
 							<button type="submit" class="btn btn-primary" id="btnBuscarRecibos">
@@ -173,6 +173,41 @@
 						</form>
 					</div>
 				</div>
+
+				<section class="detailReceiptSection container mt-3">
+					<div class="row" id="detalleRecibos">
+						<!-- Start employ 1-->
+						<!-- <article class="col-md-4 receipt my-4">
+							<div class="card pt-2 px-2 mt-1 rounded-3 bg-secondary-subtle h-100">
+								<img
+									src="../assets/images/user1.webp"
+									class="card-img-top rounded-3"
+									alt="imagen usuario"
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Nombre del empleado</h5>
+									<p class="card-text justified">
+										ID: <br />
+										CUIL: <br />
+										DNI: <br />
+										FECHA NACIMIENTO: <br />
+										FECHA ALTA: <br />
+										FECHA BAJA: <br />
+										EMAIL: <br />
+										SUVICO: <br />
+										------------------- <br />
+										COBERTURA: <br />
+										HORAS TRABAJADAS: <br />
+										FERIADOS TRABAJADOS: <br />
+										HORAS NOCTURNAS: <br />
+									</p>
+									<a href="#" class="btn btn-primary">Recibo</a>
+								</div>
+							</div>
+						</article> -->
+						<!-- End employ 1 -->
+					</div>
+				</section>
 			</section>
 		</main>
 

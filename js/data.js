@@ -1,4 +1,4 @@
-import { Empleado } from './classes.js';
+import { Empleado, Cobertura } from './classes.js';
 
 //ESCALA DE SUELDOS VIGENTE
 //CONCEPTOS REMUNERATIVOS
@@ -38,14 +38,15 @@ const EMPLEADOS = [
 		'',
 		'juan.hernandez@example.com',
 		'1234567890123456789012',
-		'SI'
+		'SI',
+		'employee1.webp'
 	),
 	new Empleado(
 		'2',
 		'20-22222222-7',
 		'22222222',
 		'ORTEGA',
-		'NESTOR',
+		'ANDREA',
 		'VIGILADOR',
 		'ACTIVO',
 		'1980-01-01',
@@ -53,7 +54,8 @@ const EMPLEADOS = [
 		'',
 		'orteganestor@gmail.com',
 		'1234567890123456789012',
-		'NO'
+		'NO',
+		'employee2.webp'
 	),
 	new Empleado(
 		'3',
@@ -68,7 +70,8 @@ const EMPLEADOS = [
 		'',
 		'carlos.rodriguez@example.com',
 		'1234567890123456789012',
-		'SI'
+		'SI',
+		'employee3.webp'
 	),
 	new Empleado(
 		'4',
@@ -83,14 +86,15 @@ const EMPLEADOS = [
 		'',
 		'martin.lopez@example.com',
 		'1234567890123456789012',
-		'NO'
+		'NO',
+		'employee4.webp'
 	),
 	new Empleado(
 		'5',
 		'20-55555555-7',
 		'55555555',
-		'GARCIA',
-		'LUIS',
+		'CARRANZA',
+		'MONICA',
 		'VIGILADOR',
 		'ACTIVO',
 		'1982-12-11',
@@ -98,14 +102,15 @@ const EMPLEADOS = [
 		'',
 		'luis.garcia@example.com',
 		'1234567890123456789012',
-		'SI'
+		'SI',
+		'employee5.webp'
 	),
 	new Empleado(
 		'6',
 		'20-66666666-7',
 		'66666666',
-		'SANCHEZ',
-		'ANA',
+		'ALVAREZ',
+		'ANALIA',
 		'VIGILADOR',
 		'ACTIVO',
 		'1988-07-07',
@@ -113,7 +118,8 @@ const EMPLEADOS = [
 		'',
 		'ana.sanchez@example.com',
 		'1234567890123456789012',
-		'NO'
+		'NO',
+		'employee6.webp'
 	),
 	new Empleado(
 		'7',
@@ -128,10 +134,30 @@ const EMPLEADOS = [
 		'',
 		'hmfarias@gmail.com',
 		'1234567890123456789012',
-		'SI'
+		'SI',
+		'employee7.webp'
 	),
 ];
 /**FIN CREO ARRAY DE EMPLEADOS ---------------------------------- */
+
+/**CREO ARRAY DE COBERTURAS ------------------------------------- */
+
+const COBERTURAS = [
+	new Cobertura('1', '2024', '01', '11111111', 216, 1, 100),
+	new Cobertura('2', '2024', '01', '22222222', 240, 1, 75),
+	new Cobertura('3', '2024', '01', '33333333', 232, 0, 0),
+	new Cobertura('4', '2024', '01', '44444444', 216, 0, 0),
+	new Cobertura('5', '2024', '01', '55555555', 198, 1, 0),
+	new Cobertura('6', '2024', '01', '77777777', 252, 2, 125),
+	new Cobertura('7', '2024', '02', '11111111', 125, 0, 100),
+	new Cobertura('8', '2024', '02', '22222222', 232, 1, 75),
+	new Cobertura('9', '2024', '02', '33333333', 208, 0, 0),
+	new Cobertura('10', '2024', '02', '44444444', 216, 0, 0),
+	new Cobertura('11', '2024', '02', '55555555', 208, 0, 0),
+	new Cobertura('12', '2024', '02', '66666666', 200, 0, 0),
+	new Cobertura('13', '2024', '02', '77777777', 220, 1, 100),
+];
+/**FIN CREO ARRAY DE COBERTURAS ---------------------------------- */
 
 export {
 	SUELDO_BASICO,
@@ -148,4 +174,5 @@ export {
 	PORCE_APORTE_SOLIDARIO,
 	FECHA_HOY,
 	EMPLEADOS,
+	COBERTURAS,
 };

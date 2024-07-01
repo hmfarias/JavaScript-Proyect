@@ -1,7 +1,7 @@
 //CLASES ----------------------------------------------------------
 class Empleado {
 	constructor(
-		legajo,
+		id,
 		cuil,
 		dni,
 		apellido,
@@ -13,9 +13,10 @@ class Empleado {
 		fechaBaja,
 		email,
 		CBU,
-		suvico
+		suvico,
+		foto
 	) {
-		this.legajo = legajo;
+		this.id = id;
 		this.cuil = cuil;
 		this.dni = dni;
 		this.nombre = `${apellido} ${nombre}`;
@@ -27,9 +28,22 @@ class Empleado {
 		this.email = email;
 		this.CBU = CBU;
 		this.suvico = suvico;
+		this.foto = foto;
+	}
+}
+
+class Cobertura {
+	constructor(id, ano, mes, dni, horas, feriados, horasNocturnas) {
+		this.id = id;
+		this.ano = ano;
+		this.mes = mes;
+		this.dni = dni;
+		this.horas = horas;
+		this.feriados = feriados;
+		this.horasNocturnas = horasNocturnas;
 	}
 }
 
 //FIN CLASES -------------------------------------------------------
 
-export { Empleado };
+export { Empleado, Cobertura };
