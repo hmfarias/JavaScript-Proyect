@@ -18,5 +18,8 @@ ANO_MES_FORM.addEventListener('submit', (evento) => {
 BTN_ULTIMO_LOTE.addEventListener('click', () => {
 	let ultimoAno = localStorage.getItem('ultimoAno');
 	let ultimoMes = localStorage.getItem('ultimoMes');
+	BTN_ULTIMO_LOTE.disabled = true;
+	MES.value = ultimoMes;
+	ANO.value = ultimoAno;
 	renderizaEmpleados(ultimoMes, ultimoAno);
 });
