@@ -246,10 +246,16 @@ const generarRecibo = (event) => {
 		TOTAL_REMUNERATIVO
 	)} No Remunerativas: $ ${formatearNumero(TOTAL_NO_REMUNERATIVO)}</strong><br /> 
 	-----------------------------------------------------------------------------<br />
-	Jubilación  : $ ${formatearNumero(APORTE_JUBILATORIO_LIQUIDACION)}<br />
-	Ley 19.032  : $ ${formatearNumero(APORTE_LEY19032_LIQUIDACION)}<br />
-	SUVICO      : $ ${formatearNumero(aporteSuvicoLiquidacion)}<br />
-	Obra Social : $ ${formatearNumero(APORTE_OBRA_SOCIAL_LIQUIDACION)}<br />
+	Jubilación ${PORCE_JUBILACION * 100}%: $ ${formatearNumero(
+		APORTE_JUBILATORIO_LIQUIDACION
+	)}<br />
+	Ley 19.032 ${PORCE_LEY19032 * 100}%: $ ${formatearNumero(
+		APORTE_LEY19032_LIQUIDACION
+	)}<br />
+	SUVICO: ${PORCE_SUVICO * 100}%: $ ${formatearNumero(aporteSuvicoLiquidacion)}<br />
+	Obra Social ${PORCE_OBRA_SOCIAL * 100}%: $ ${formatearNumero(
+		APORTE_OBRA_SOCIAL_LIQUIDACION
+	)}<br />
 	-----------------------------------------------------------------------------<br />
 	<strong>TOTAL DESCUENTOS: $ ${formatearNumero(TOTAL_DESCUENTOS)}</strong><br />
 	-----------------------------------------------------------------------------<br />
