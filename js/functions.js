@@ -219,7 +219,7 @@ const generarRecibo = (event) => {
 	</p>
 	<p>
 	-----------------------------------------------------------------------------<br />
-	<strong>Liquidación:</strong><br />
+	<strong>LIQUIDACIÓN:</strong><br />
 	-----------------------------------------------------------------------------<br />
 	<strong>Remunerativos:</strong><br />
 	Sueldo Básico: ${DIAS_TRABAJADOS} días $ ${formatearNumero(
