@@ -207,8 +207,8 @@ const generarRecibo = (event) => {
 	<h5>Mes: ${MES}  Año: ${ANO}</h5>
 	<p>
 	<strong>DATOS PARA LIQUIDACIÓN:</strong><br />                 
-	Fecha de proceso: ${FECHA_HOY}
-	COBERTURA: <br />
+	Fecha de proceso: ${FECHA_HOY}<br />
+	<strong>COBERTURA:</strong><br />
 	Días del mes: ${DIAS_MES}<br />
 	Horas base: ${HORAS_BASE}<br />
 	HORAS TRABAJADAS: ${COBERTURA_ACTIVA.horas}<br />
@@ -219,41 +219,41 @@ const generarRecibo = (event) => {
 	</p>
 	<p>
 	-----------------------------------------------------------------------------<br />
-	Liquidación:  Cant   REMUNERATIVOS  NO REMUNERATIVOS   DESCUENTOS<br />
+	<strong>Liquidación:</strong><br />
 	-----------------------------------------------------------------------------<br />
-	Sueldo Básico: ${DIAS_TRABAJADOS}      $ ${formatearNumero(
+	<strong>Remunerativos:</strong><br />
+	Sueldo Básico: ${DIAS_TRABAJADOS} días $ ${formatearNumero(
 		SUELDO_BASICO_LIQUIDACION
 	)}<br />
 	Antiguedad   : ${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%     $ ${formatearNumero(
 		ANTIGUEDAD_LIQUIDACION
 	)}<br />
-	Remunerativo : ${DIAS_TRABAJADOS}      $ ${formatearNumero(
+	Remunerativo : ${DIAS_TRABAJADOS} días $ ${formatearNumero(
 		REMUNERATIVO_LIQUIDACION
 	)}<br />
-	Presentismo  : ${DIAS_TRABAJADOS}      $ ${formatearNumero(PRESENTISMO_LIQUIDACION)}<br />
-	Feriados     :  ${COBERTURA_ACTIVA.feriados}      $ ${formatearNumero(
+	Presentismo  : ${DIAS_TRABAJADOS} días $ ${formatearNumero(PRESENTISMO_LIQUIDACION)}<br />
+	Feriados     :  ${COBERTURA_ACTIVA.feriados} días $ ${formatearNumero(
 		FERIADOS_LIQUIDACION
 	)}<br />
-	Horas Extra  : ${HORAS_EXTRA}      $ ${formatearNumero(HORAS_EXTRA_LIQUIDACION)}<br />
-	Viáticos     : ${DIAS_TRABAJADOS}    			 	     $ ${formatearNumero(
-		VIATICOS_LIQUIDACION
-	)}<br />
-	Suma No Remun: ${DIAS_TRABAJADOS}    				     $ ${formatearNumero(
+	Horas Extra  : ${HORAS_EXTRA} horas $ ${formatearNumero(HORAS_EXTRA_LIQUIDACION)}<br />
+	<strong>No Remunerativos:</strong><br />
+	Viáticos     : ${DIAS_TRABAJADOS} días $ ${formatearNumero(VIATICOS_LIQUIDACION)}<br />
+	Suma No Remun: ${DIAS_TRABAJADOS} días $ ${formatearNumero(
 		NO_REMUNETATIVO_LIQUIDACION
 	)}<br />
 	-----------------------------------------------------------------------------<br />
-	TOTAL BONIFIC:         $ ${formatearNumero(TOTAL_REMUNERATIVO)}  $ ${formatearNumero(
-		TOTAL_NO_REMUNERATIVO
-	)}<br /> 
+	<strong>TOTAL BONIFICACIONES: Remunerativas: $ ${formatearNumero(
+		TOTAL_REMUNERATIVO
+	)} No Remunerativas: $ ${formatearNumero(TOTAL_NO_REMUNERATIVO)}</strong><br /> 
 	-----------------------------------------------------------------------------<br />
-	Jubilación  :     								      $ ${formatearNumero(APORTE_JUBILATORIO_LIQUIDACION)}<br />
-	Ley 19.032  :     								      $ ${formatearNumero(APORTE_LEY19032_LIQUIDACION)}<br />
-	SUVICO      :     								      $ ${formatearNumero(aporteSuvicoLiquidacion)}<br />
-	Obra Social:     								      $ ${formatearNumero(APORTE_OBRA_SOCIAL_LIQUIDACION)}<br />
+	Jubilación  : $ ${formatearNumero(APORTE_JUBILATORIO_LIQUIDACION)}<br />
+	Ley 19.032  : $ ${formatearNumero(APORTE_LEY19032_LIQUIDACION)}<br />
+	SUVICO      : $ ${formatearNumero(aporteSuvicoLiquidacion)}<br />
+	Obra Social : $ ${formatearNumero(APORTE_OBRA_SOCIAL_LIQUIDACION)}<br />
 	-----------------------------------------------------------------------------<br />
-	TOTAL DESCUENTOS:       						     $ ${formatearNumero(TOTAL_DESCUENTOS)}<br />
+	<strong>TOTAL DESCUENTOS: $ ${formatearNumero(TOTAL_DESCUENTOS)}</strong><br />
 	-----------------------------------------------------------------------------<br />
-	TOTAL DE BOLSILLO:       $ ${formatearNumero(TOTAL_BOLSILLO)}<br />
+	<strong>TOTAL DE BOLSILLO: $ ${formatearNumero(TOTAL_BOLSILLO)}</strong><br />
 	</p>`;
 	//END ARMADO EL HTML A RENDERIZAR ------------------------------------------------------------
 
