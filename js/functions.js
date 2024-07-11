@@ -480,6 +480,7 @@ const generarRecibo = (event) => {
 	DOMbtnDownload.setAttribute('keyNombre', EMPLEADO_ACTIVO.nombre);
 
 	document.getElementById('download-pdf').addEventListener('click', downloadReceipt);
+	document.getElementById('print-pdf').addEventListener('click', printReceipt);
 };
 //************************************************************************************** */
 
@@ -497,13 +498,47 @@ const downloadReceipt = (event) => {
 	)}.pdf`;
 
 	const opt = {
-		margin: 4,
+		margin: [10, 10, 10, 10],
 		filename: NOMBRE_RECIBO,
-		image: { type: 'jpeg', quality: 0.98 },
+		image: { type: 'pdf', quality: 0.98 },
 		html2canvas: { scale: 2 },
 		jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
 	};
 	html2pdf().set(opt).from(ELEMENT).save();
+};
+//************************************************************************************** */
+
+//************************************************************************************** */
+/**
+ * * FUNCION: printReceipt genera la descarga del recibo en formato pdf (utiliza libreria html2pdf())
+ * @param event (es el objeto event donde se pueden extraer los atributos necesarios para asignar el nombre al recibo)
+ */
+const printReceipt = (event) => {
+	const ELEMENT = document.getElementById('recibo-content');
+	const NOMBRE_RECIBO = `${event.target.getAttribute(
+		'keyAno'
+	)}-${event.target.getAttribute('keyMes')}-${event.target.getAttribute(
+		'keyNombre'
+	)}.pdf`;
+
+	const opt = {
+		margin: [10, 10, 10, 10],
+		filename: NOMBRE_RECIBO,
+		image: { type: 'pdf', quality: 0.98 },
+		html2canvas: { scale: 2 },
+		jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+	};
+	html2pdf()
+		.set(opt)
+		.from(ELEMENT)
+		.toPdf()
+		.get('pdf')
+		.then((pdf) => {
+			const NEW_WINDOWS = window.open(pdf.output('bloburl'), '_blank');
+			if (NEW_WINDOWS) {
+				NEW_WINDOWS.print();
+			}
+		});
 };
 //************************************************************************************** */
 
