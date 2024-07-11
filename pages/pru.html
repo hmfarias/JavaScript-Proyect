@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Recibo de Sueldo</title>
+		<style>
+			.recibo {
+				max-width: 800px;
+				margin: auto;
+				padding: 20px;
+				border: 1px solid #000;
+			}
+			.recibo header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid #000;
+				padding-bottom: 10px;
+				margin-bottom: 20px;
+			}
+			.recibo header img {
+				max-width: 100px;
+			}
+			.recibo .content {
+				margin-bottom: 20px;
+			}
+			.recibo footer {
+				border-top: 1px solid #000;
+				padding-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="recibo" id="recibo">
+			<header>
+				<img src="logo.png" alt="Logo de la Empresa" />
+				<h1>Recibo de Sueldo</h1>
+			</header>
+			<div class="content">
+				<p>Nombre: Juan Pérez</p>
+				<p>Legajo: 123456</p>
+				<p>CUIL: 20-12345678-9</p>
+				<p>Mes: Enero</p>
+				<p>Año: 2024</p>
+				<!-- Más información del recibo -->
+			</div>
+			<footer>
+				<p>Empresa XYZ - Dirección - Teléfono</p>
+			</footer>
+		</div>
+		<button onclick="generarPDF()">Generar PDF</button>
+
+		<script>
+			function generarPDF() {
+				const element = document.getElementById('recibo');
+				html2pdf()
+					.from(element)
+					.set({
+						margin: 1,
+						filename: 'Recibo_de_Sueldo.pdf',
+						html2canvas: { scale: 2 },
+						jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+					})
+					.save();
+			}
+		</script>
+	</body>
+</html>

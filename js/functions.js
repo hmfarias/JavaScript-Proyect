@@ -1,4 +1,4 @@
-/**IMPORTO CONSTANTES Y DATOS DE EMPLEADOS ---------------------- */
+/**IMPORTO CONSTANTES ---------------------- */
 import {
 	SUELDO_BASICO,
 	PRESENTISMO,
@@ -11,12 +11,116 @@ import {
 	PORCE_SUVICO,
 	PORCE_APORTE_SOLIDARIO,
 	FECHA_HOY,
-	EMPLEADOS,
-	COBERTURAS,
+	EMPLEADOS_API,
+	COBERTURAS_API,
 } from './data.js';
-/**FIN IMPORTO CONSTANTES Y DATOS DE EMPLEADOS ------------------- */
 
 //FUNCIONES A UTILIZAR ----------------------------------------------------------------------------------------------
+
+//************************************************************************************** */
+/**
+ * * FUNCION: renderizarEmpleados renderiza en el DOM el detalle de cards de empleados mostrándolos en orden alfabético
+ * Para poder mostrar el listado de empleados ordenado por nombre, es necesario construir un nuevo array con los datos de los empleados y las coberturas unidas, para luego ordenarlo por nombre utilizando SORT
+ * PARÁMETROS:
+ * @param mes (es el numero de mes ingresado en el formulario)
+ * @param ano (es el numero de año ingresado en el formulario)
+ */
+const renderizaEmpleados = (mes, ano) => {
+	let DOMdetalleRecibos = document.getElementById('detalleRecibos'); //traigo el objeto contenedor del DOM
+	DOMdetalleRecibos.innerHTML = ''; //elimino lo que pudiera tener
+
+	let datosRecibos = []; //en este array estarán los datos de cada recibo - resultado de unir COBERTURAS Y EMPLEADOS
+
+	if (
+		!COBERTURAS_API.some((cobertura) => cobertura.ano === ano && cobertura.mes === mes)
+	) {
+		Swal.fire({
+			icon: 'warning',
+			title: 'Oops...',
+			text: 'No existen coberturas para el período seleccionado',
+		});
+		return;
+	}
+	//recorro el array de coberturas, operando sobre las que correspondan al mes y año ingresados
+	COBERTURAS_API.forEach((coberturaElemento) => {
+		if (coberturaElemento.mes === mes && coberturaElemento.ano === ano) {
+			//objeto cobertura individual
+			let coberturaRecibo = {
+				horas: coberturaElemento.horas,
+				feriados: coberturaElemento.feriados,
+				horasNocturnas: coberturaElemento.horasNocturnas,
+			};
+			//objeto empleado individual
+			let empleadoRecibo = EMPLEADOS_API.find(
+				(empleado) => empleado.id === coberturaElemento.idEmpleado
+			);
+			//objeto mes y año
+			let objPeriodo = {
+				ano: ano,
+				mes: mes,
+			};
+			//uno los tres objetos anteriores
+			let recibo = { ...empleadoRecibo, ...coberturaRecibo, ...objPeriodo }; //uno los objetos
+			//agrego el nuevo objeto al array datosRecibos que sera el que despues voy a ordenar por nombre
+			datosRecibos.push(recibo);
+		}
+	});
+	//ordeno por nombre el array con los datos de los recibos para el mes y año solicitados
+	//una visualizacion alfabetica es mejor en el caso de que sean muchos los empleados
+	const datosRecibosOrdenados = ordenarArray(datosRecibos, 'nombre');
+
+	// guardo el conjunto de recibos en local storage por si se lo quiere volver a procesar
+	localStorage.setItem('ultimoLote', JSON.stringify(datosRecibosOrdenados));
+	localStorage.setItem('ultimoMes', mes);
+	localStorage.setItem('ultimoAno', ano);
+
+	// localStorage.setItem('ultimoPeriodo', objPeriodo);
+
+	//modifico el DOM
+	datosRecibosOrdenados.forEach((element) => {
+		const HTML = `
+			<!-- Start employee ----------------------------------->
+			<article class="col-md-4 receipt my-4">
+				<div class="card pt-2 px-2 mt-1 rounded-3 bg-secondary-subtle h-100">
+					<img
+						src="${element.foto}"
+						class="card-img-top rounded-3"
+						alt="imagen empleado"
+					/>
+					<div class="card-body">
+						<h5 class="card-title">${element.nombre}</h5>
+						<p class="card-text justified">
+							ID: ${element.id}<br />
+							CUIL: ${element.cuil} <br />
+							DNI: ${element.dni}<br />
+							FECHA NACIMIENTO: ${element.fechaNacimiento.slice(0, 10)}<br />
+							FECHA ALTA: ${element.fechaAlta.slice(0, 10)} <br />
+							FECHA BAJA: ${element.fechaBaja.slice(0, 10)} <br />
+							EMAIL: ${element.email} <br />
+							SUVICO: ${element.suvico} <br />
+							------------------- <br />
+							COBERTURA: <br />
+							HORAS TRABAJADAS:  ${element.horas}<br />
+							FERIADOS TRABAJADOS: ${element.feriados}<br />
+							HORAS NOCTURNAS: ${element.horasNocturnas} <br />
+						</p>
+						<button class="btn btn-primary btn-recibo" keyMes=${mes} keyAno= ${ano} keyId=${
+			element.id
+		}>Recibo</button>
+					</div>
+				</div>
+			</article>
+			<!-- End employee -------------------------------------->
+			`;
+		DOMdetalleRecibos.innerHTML += HTML;
+	});
+	document.querySelectorAll('.btn-recibo').forEach((boton) => {
+		boton.addEventListener('click', generarRecibo);
+	});
+};
+//************************************************************************************** */
+
+//************************************************************************************** */
 /**
  * *FUNCION: ordenarArray ordena un array de acuerdo a un campo indicado por parámetro
  * @param array (es el array que se desea ordenar)
@@ -33,7 +137,9 @@ const ordenarArray = (array, campo) => {
 		return 0;
 	});
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * *FUNCION generarRecibo: genera el recibo cuando se hace click en la card de un empleado
  *@param: event (es el evento disparado al hacer click en el boton de la card de un empleado)
@@ -46,14 +152,15 @@ const generarRecibo = (event) => {
 	//tomo las keys que vienen en el evento click y que son necesarias para las busquedas en los arrays empleados y coberturas
 	const MES = event.target.getAttribute('keyMes');
 	const ANO = event.target.getAttribute('keyAno');
-	const DNI = event.target.getAttribute('keyDni');
+	const ID = event.target.getAttribute('keyId');
 
 	//Busco el empleado en el array de empleados
-	const EMPLEADO_ACTIVO = EMPLEADOS.find((empleado) => empleado.dni === DNI);
+	const EMPLEADO_ACTIVO = EMPLEADOS_API.find((empleado) => empleado.id === ID);
 
 	//Busco la cobertura del empleado en el array de coberturas
-	const COBERTURA_ACTIVA = COBERTURAS.find(
-		(cobertura) => cobertura.mes === MES && cobertura.ano === ANO && cobertura.dni === DNI
+	const COBERTURA_ACTIVA = COBERTURAS_API.find(
+		(cobertura) =>
+			cobertura.mes === MES && cobertura.ano === ANO && cobertura.idEmpleado === ID
 	);
 
 	//A partir de aquí comienzo a calcular todos los conceptos necesarios para el recibo ----
@@ -181,86 +288,175 @@ const generarRecibo = (event) => {
 
 	// CALCULO EL TOTAL DE BOLSILLO
 	const TOTAL_BOLSILLO = TOTAL_REMUNERATIVO + TOTAL_NO_REMUNERATIVO - TOTAL_DESCUENTOS;
+	const TOTAL_LETRAS = numeroALetras(TOTAL_BOLSILLO).toUpperCase();
 
 	//END CALCULO DE CONCEPTOS PARA EL RECIBO ----------------------------------------------------------
 
 	//START ARMADO DEL HTML A RENDERIZAR ---------------------------------------------------------------
 	const HTML = `
-	<h5 id = "nombreRecibo">${EMPLEADO_ACTIVO.nombre} </h5> 
+	<div class="recibo" id="recibo">
+		<header>
+			<img
+				class="logo"
+				id="logo"
+				src="../assets/images/logoRF.svg"
+				alt="RF Seguridad Integral logo"
+			/>
+			<h4>Recibo de Sueldo</h4>
+		</header>
+		<div class="content">
+			<h4 id="nombreRecibo">${EMPLEADO_ACTIVO.nombre}</h4>
+			<p>
+				LEGAJO: ${EMPLEADO_ACTIVO.id}<br />
+				CUIL: ${EMPLEADO_ACTIVO.cuil} <br />
+				DNI: ${EMPLEADO_ACTIVO.dni}<br />
+				FECHA NACIMIENTO: ${EMPLEADO_ACTIVO.fechaNacimiento}<br />
+				FECHA ALTA: ${EMPLEADO_ACTIVO.fechaAlta} Antiguedad: ${ANOS_ANTIGUEDAD} años Pje:
+				${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%<br />
+				FECHA BAJA: ${EMPLEADO_ACTIVO.fechaBaja} <br />
+				EMAIL: ${EMPLEADO_ACTIVO.email} <br />
+				CATEGORIA: ${EMPLEADO_ACTIVO.tipo} Estado: ${EMPLEADO_ACTIVO.estado} SUVICO:
+				${
+					EMPLEADO_ACTIVO.suvico
+				} <br />----------------------------------------------------------------------
+			</p>
+			<h5>Mes: ${MES} Año: ${ANO}</h5>
+			<p>
+				<strong>DATOS PARA LIQUIDACIÓN:</strong><br />
+				Fecha de proceso: ${FECHA_HOY}<br />
+				<strong>COBERTURA:</strong><br />
+				Días del mes: ${DIAS_MES}<br />
+				Horas base: ${HORAS_BASE}<br />
+				HORAS TRABAJADAS: ${COBERTURA_ACTIVA.horas}<br />
+				DIAS A LIQUIDAR: ${DIAS_TRABAJADOS}<br />
+				FERIADOS TRABAJADOS: ${COBERTURA_ACTIVA.feriados}<br />
+				HORAS EXTRA: ${HORAS_EXTRA}<br />
+				HORAS NOCTURNAS: ${COBERTURA_ACTIVA.horasNocturnas} <br />
+			</p>
+			<h6>LIQUIDACIÓN:</h6>
+			<table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Cantidad</th>
+                        <th>Remunerativo</th>
+                        <th>No Remunerativo</th>
+                        <th>Descuentos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="left">Sueldo Básico</td>
+                        <td> ${DIAS_TRABAJADOS} d</td>
+                        <td>$ ${formatearNumero(SUELDO_BASICO_LIQUIDACION)}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Antiguedad</td>
+                        <td>${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%</td>
+                        <td>$ ${formatearNumero(ANTIGUEDAD_LIQUIDACION)}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Remunerativo</td>
+                        <td> ${DIAS_TRABAJADOS} d</td>
+                        <td>$ ${formatearNumero(REMUNERATIVO_LIQUIDACION)}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Presentismo</td>
+                        <td>${DIAS_TRABAJADOS} d</td>
+                        <td>$ ${formatearNumero(PRESENTISMO_LIQUIDACION)}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Feriados</td>
+                        <td>${COBERTURA_ACTIVA.feriados} d</td>
+                        <td>$ ${formatearNumero(FERIADOS_LIQUIDACION)}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Horas Extras</td>
+                        <td>${HORAS_EXTRA} h </td>
+                        <td>$ ${formatearNumero(HORAS_EXTRA_LIQUIDACION)}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Viáticos</td>
+                        <td>${DIAS_TRABAJADOS} d </td>
+                        <td></td>
+                        <td> $ ${formatearNumero(VIATICOS_LIQUIDACION)}</td>
+                        <td></td>
+                    </tr>	
+                    <tr class="total-row">
+                        <td class="left">TOTAL BONIF</td>
+                        <td>${DIAS_TRABAJADOS} d</td>
+                        <td>$ ${formatearNumero(TOTAL_REMUNERATIVO)}</td>
+                        <td>$ ${formatearNumero(TOTAL_NO_REMUNERATIVO)}</td>
+                        <td></td>
+                    </tr>				
+                    <tr>
+                        <td class="left">Jubilación</td>
+                        <td>${PORCE_JUBILACION * 100}%</td>
+                        <td></td>
+                        <td></td>
+                        <td>$ ${formatearNumero(APORTE_JUBILATORIO_LIQUIDACION)}</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Ley 19.032</td>
+                        <td>${PORCE_LEY19032 * 100}%</td>
+                        <td></td>
+                        <td></td>
+                        <td>$ ${formatearNumero(APORTE_LEY19032_LIQUIDACION)}</td>
+                    </tr>
+                    <tr>
+                        <td class="left">SUVICO</td>
+                        <td>${PORCE_SUVICO * 100}%</td>
+                        <td></td>
+                        <td></td>
+                        <td>$ ${formatearNumero(aporteSuvicoLiquidacion)}</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Obra Social</td>
+                        <td>${PORCE_OBRA_SOCIAL * 100}%</td>
+                        <td></td>
+                        <td></td>
+                        <td>$ ${formatearNumero(APORTE_OBRA_SOCIAL_LIQUIDACION)}</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td class="left">TOTAL DESCUENTOS</td>
+                        <td>${DIAS_TRABAJADOS} d</td>
+                        <td></td>
+                        <td></td>
+                        <td>$ ${formatearNumero(TOTAL_DESCUENTOS)}</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td class="left">TOTAL DE BOLSILLO</td>
+                        <td>${DIAS_TRABAJADOS} d</td>
+                        <td>$ ${formatearNumero(TOTAL_BOLSILLO)}</td>
+
+                    </tr>
+                    <!-- Más filas según sea necesario -->
+                </tbody>
+            </table>
+			<p>Son Pesos: ${TOTAL_LETRAS}</p>
 	
-	<p>
-	LEGAJO: ${EMPLEADO_ACTIVO.id}<br />
-	CUIL: ${EMPLEADO_ACTIVO.cuil} <br />
-	DNI: ${EMPLEADO_ACTIVO.dni}<br />
-	FECHA NACIMIENTO: ${EMPLEADO_ACTIVO.fechaNacimiento}<br />
-	FECHA ALTA: ${
-		EMPLEADO_ACTIVO.fechaAlta
-	} Antiguedad: ${ANOS_ANTIGUEDAD} años Pje: ${formatearNumero(
-		PORCENTAJE_ANTIGUEDAD * 100
-	)}%<br />
-	FECHA BAJA: ${EMPLEADO_ACTIVO.fechaBaja} <br />
-	EMAIL: ${EMPLEADO_ACTIVO.email} <br />
-	CATEGORIA: ${EMPLEADO_ACTIVO.tipo} Estado: ${EMPLEADO_ACTIVO.estado}
-	SUVICO: ${EMPLEADO_ACTIVO.suvico} <br />
-	----------------------------------------------------------------------
-	</p>
-	<h5>Mes: ${MES}  Año: ${ANO}</h5>
-	<p>
-	<strong>DATOS PARA LIQUIDACIÓN:</strong><br />                 
-	Fecha de proceso: ${FECHA_HOY}<br />
-	<strong>COBERTURA:</strong><br />
-	Días del mes: ${DIAS_MES}<br />
-	Horas base: ${HORAS_BASE}<br />
-	HORAS TRABAJADAS: ${COBERTURA_ACTIVA.horas}<br />
-	DIAS A LIQUIDAR: ${DIAS_TRABAJADOS}<br />
-	FERIADOS TRABAJADOS: ${COBERTURA_ACTIVA.feriados}<br />
-	HORAS EXTRA: ${HORAS_EXTRA}<br/>
-	HORAS NOCTURNAS: ${COBERTURA_ACTIVA.horasNocturnas} <br />
-	</p>
-	<p>
-	-----------------------------------------------------------------------------<br />
-	<strong>LIQUIDACIÓN:</strong><br />
-	-----------------------------------------------------------------------------<br />
-	<strong>Remunerativos:</strong><br />
-	Sueldo Básico: ${DIAS_TRABAJADOS} días $ ${formatearNumero(
-		SUELDO_BASICO_LIQUIDACION
-	)}<br />
-	Antiguedad   : ${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%     $ ${formatearNumero(
-		ANTIGUEDAD_LIQUIDACION
-	)}<br />
-	Remunerativo : ${DIAS_TRABAJADOS} días $ ${formatearNumero(
-		REMUNERATIVO_LIQUIDACION
-	)}<br />
-	Presentismo  : ${DIAS_TRABAJADOS} días $ ${formatearNumero(PRESENTISMO_LIQUIDACION)}<br />
-	Feriados     :  ${COBERTURA_ACTIVA.feriados} días $ ${formatearNumero(
-		FERIADOS_LIQUIDACION
-	)}<br />
-	Horas Extra  : ${HORAS_EXTRA} horas $ ${formatearNumero(HORAS_EXTRA_LIQUIDACION)}<br />
-	<strong>No Remunerativos:</strong><br />
-	Viáticos     : ${DIAS_TRABAJADOS} días $ ${formatearNumero(VIATICOS_LIQUIDACION)}<br />
-	Suma No Remun: ${DIAS_TRABAJADOS} días $ ${formatearNumero(
-		NO_REMUNETATIVO_LIQUIDACION
-	)}<br />
-	-----------------------------------------------------------------------------<br />
-	<strong>TOTAL BONIFICACIONES: Remunerativas: $ ${formatearNumero(
-		TOTAL_REMUNERATIVO
-	)} No Remunerativas: $ ${formatearNumero(TOTAL_NO_REMUNERATIVO)}</strong><br /> 
-	-----------------------------------------------------------------------------<br />
-	Jubilación ${PORCE_JUBILACION * 100}%: $ ${formatearNumero(
-		APORTE_JUBILATORIO_LIQUIDACION
-	)}<br />
-	Ley 19.032 ${PORCE_LEY19032 * 100}%: $ ${formatearNumero(
-		APORTE_LEY19032_LIQUIDACION
-	)}<br />
-	SUVICO: ${PORCE_SUVICO * 100}%: $ ${formatearNumero(aporteSuvicoLiquidacion)}<br />
-	Obra Social ${PORCE_OBRA_SOCIAL * 100}%: $ ${formatearNumero(
-		APORTE_OBRA_SOCIAL_LIQUIDACION
-	)}<br />
-	-----------------------------------------------------------------------------<br />
-	<strong>TOTAL DESCUENTOS: $ ${formatearNumero(TOTAL_DESCUENTOS)}</strong><br />
-	-----------------------------------------------------------------------------<br />
-	<strong>TOTAL DE BOLSILLO: $ ${formatearNumero(TOTAL_BOLSILLO)}</strong><br />
-	</p>`;
+
+		</div>
+		<footer>
+			<p>
+				RF Seguridad Integral SRL - Félix Frías 465 - PB - Local 1 - Tel: 3517777777
+			</p>
+		</footer>
+	</div>
+	`;
+
 	//END ARMADO EL HTML A RENDERIZAR ------------------------------------------------------------
 
 	//tomo el elemento del DOM donde se va a renderizar el recibo dentro del modal
@@ -283,7 +479,9 @@ const generarRecibo = (event) => {
 
 	document.getElementById('download-pdf').addEventListener('click', downloadReceipt);
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCION: downloadReceipt genera la descarga del recibo en formato pdf (utiliza libreria html2pdf())
  * @param event (es el objeto event donde se pueden extraer los atributos necesarios para asignar el nombre al recibo)
@@ -297,114 +495,17 @@ const downloadReceipt = (event) => {
 	)}.pdf`;
 
 	const opt = {
-		margin: 1,
+		margin: 4,
 		filename: NOMBRE_RECIBO,
 		image: { type: 'jpeg', quality: 0.98 },
 		html2canvas: { scale: 2 },
-		jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+		jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
 	};
 	html2pdf().set(opt).from(ELEMENT).save();
 };
+//************************************************************************************** */
 
-/**
- * * FUNCION: renderizarEmpleados renderiza en el DOM el detalle de cards de empleados mostrándolos en orden alfabético
- * Para poder mostrar el listado de empleados ordenado por nombre, es necesario construir un nuevo array con los datos de los empleados y las coberturas unidas, para luego ordenarlo por nombre utilizando SORT
- * PARÁMETROS:
- * @param mes (es el numero de mes ingresado en el formulario)
- * @param ano (es el numero de año ingresado en el formulario)
- */
-const renderizaEmpleados = (mes, ano) => {
-	let DOMdetalleRecibos = document.getElementById('detalleRecibos'); //traigo el objeto contenedor del DOM
-	DOMdetalleRecibos.innerHTML = ''; //elimino lo que pudiera tener
-
-	let datosRecibos = []; //en este array estarán los datos de cada recibo - resultado de unir COBERTURAS Y EMPLEADOS
-
-	if (!COBERTURAS.some((cobertura) => cobertura.ano === ano && cobertura.mes === mes)) {
-		Swal.fire({
-			icon: 'warning',
-			title: 'Oops...',
-			text: 'No existen coberturas para el período seleccionado',
-		});
-		return;
-	}
-
-	//recorro el array de coberturas, operando sobre las que correspondan al mes y año ingresados
-	COBERTURAS.forEach((coberturaElemento) => {
-		if (coberturaElemento.mes === mes && coberturaElemento.ano === ano) {
-			//objeto cobertura individual
-			let coberturaRecibo = {
-				horas: coberturaElemento.horas,
-				feriados: coberturaElemento.feriados,
-				horasNocturnas: coberturaElemento.horasNocturnas,
-			};
-			//objeto empleado individual
-			let empleadoRecibo = EMPLEADOS.find(
-				(empleado) => empleado.dni === coberturaElemento.dni
-			);
-			//objeto mes y año
-			let objPeriodo = {
-				ano: ano,
-				mes: mes,
-			};
-			//uno los tres objetos anteriores
-			let recibo = { ...empleadoRecibo, ...coberturaRecibo, ...objPeriodo }; //uno los objetos
-			//agrego el nuevo objeto al array datosRecibos que sera el que despues voy a ordenar por nombre
-			datosRecibos.push(recibo);
-		}
-	});
-
-	//ordeno por nombre el array con los datos de los recibos para el mes y año solicitados
-	//una visualizacion alfabetica es mejor en el caso de que sean muchos los empleados
-	const datosRecibosOrdenados = ordenarArray(datosRecibos, 'nombre');
-
-	// guardo el conjunto de recibos en local storage por si se lo quiere volver a procesar
-	localStorage.setItem('ultimoLote', JSON.stringify(datosRecibosOrdenados));
-	localStorage.setItem('ultimoMes', mes);
-	localStorage.setItem('ultimoAno', ano);
-
-	// localStorage.setItem('ultimoPeriodo', objPeriodo);
-
-	//modifico el DOM
-	datosRecibosOrdenados.forEach((element) => {
-		const HTML = `
-			<!-- Start employee ----------------------------------->
-			<article class="col-md-4 receipt my-4">
-				<div class="card pt-2 px-2 mt-1 rounded-3 bg-secondary-subtle h-100">
-					<img
-						src="../assets/images/${element.foto}"
-						class="card-img-top rounded-3"
-						alt="imagen empleado"
-					/>
-					<div class="card-body">
-						<h5 class="card-title">${element.nombre}</h5>
-						<p class="card-text justified">
-							ID: ${element.id}<br />
-							CUIL: ${element.cuil} <br />
-							DNI: ${element.dni}<br />
-							FECHA NACIMIENTO: ${element.fechaNacimiento}<br />
-							FECHA ALTA: ${element.fechaAlta} <br />
-							FECHA BAJA: ${element.fechaBaja} <br />
-							EMAIL: ${element.email} <br />
-							SUVICO: ${element.suvico} <br />
-							------------------- <br />
-							COBERTURA: <br />
-							HORAS TRABAJADAS:  ${element.horas}<br />
-							FERIADOS TRABAJADOS: ${element.feriados}<br />
-							HORAS NOCTURNAS: ${element.horasNocturnas} <br />
-						</p>
-						<button class="btn btn-primary btn-recibo" keyMes=${mes} keyAno= ${ano} keyDni=${element.dni}>Recibo</button>
-					</div>
-				</div>
-			</article>
-			<!-- End employee -------------------------------------->
-			`;
-		DOMdetalleRecibos.innerHTML += HTML;
-	});
-	document.querySelectorAll('.btn-recibo').forEach((boton) => {
-		boton.addEventListener('click', generarRecibo);
-	});
-};
-
+//************************************************************************************** */
 /**
  * * FUNCIÓN: calcularHorasBase devuelve las horas base del mes
  * PARÁMETROS:
@@ -438,7 +539,9 @@ const calculaHorasBase = (diasMes) => {
 	}
 	return horasBase;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN: calcularDiasTrabajados devuelve la equivalencia en días de trabajo en base a las horas base del mes
  * PARÁMETROS:
@@ -454,7 +557,9 @@ const calcularDiasTrabajados = (horasTrabajadas, horasBase, diasMes) => {
 	}
 	return DIAS_TRABAJADOS;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN: calcularExtras devuelve las horas extras trabajadas en caso de corresponder
  * las horas extras son aquellas que exceden las horas base del mes
@@ -471,7 +576,9 @@ const calcularExtras = (horasTrabajadas, horasBase) => {
 	}
 	return 0;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN:: calcularConceptoProporcional, devuelve el importe proporcional correspondiente al
  * concepto solicitado por argumento;
@@ -486,7 +593,9 @@ const calcularProporcional = (diasMes, diasTrabajados, importeConcepto) => {
 	const IMPORTE_LIQUIDACION = (importeConcepto / diasMes) * diasTrabajados;
 	return IMPORTE_LIQUIDACION;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN:: calcularTiempoAntiguedad, calcula y devuelve la cantidad de años, meses y dias
  * transcurridos desde la fecha de ingreso del empleado hasta el ultimo día del mes con el que se está trabajando
@@ -524,6 +633,9 @@ const calcularTiempoAntiguedad = (fechaAlta, fechaCalculo) => {
 	//el procentaje de antiguedad que debo aplicar sobre el sueldo básico
 	return anos;
 };
+//************************************************************************************** */
+
+//************************************************************************************** */
 /**
  * * FUNCIÓN:: calcularPorcentajeAntiguedad, devuelve el porcentaje que corresponde aplicar para el cálculo del concepto antiguead, en función de la fecha de alta que tenga el empleado
  *
@@ -551,7 +663,9 @@ const calcularPorcentajeAntiguedad = (anosAntiguedad) => {
 	}
 	return porcentajeAntiguedad;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN:: calcularImporteAntiguedad, devuelve el importe correspondiente al
  * concepto antiguead, en función de la fecha
@@ -588,7 +702,9 @@ const calcularImporteAntiguedad = (
 
 	return ANTIGUEDAD_LIQUIDACION;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN:: calcularImporteHorasExtra, devuelve el importe correspondiente a las horas extra trabajadas;
  * La hora normal equivale a: (Sueldo Basico de escala + Antiguedad del empleado + Remunerativo de escala) /200
@@ -611,7 +727,9 @@ const calcularImporteHorasExtra = (
 	const IMPORTE_HORAS_EXTRA = HORA_EXTRA * horasExtraTrabajadas;
 	return IMPORTE_HORAS_EXTRA;
 };
+//************************************************************************************** */
 
+//************************************************************************************** */
 /**
  * * FUNCIÓN:: calcularImporteFeriados, devuelve el importe correspondiente a los dias feriados trabajados;
  * El día feriado se calcula: (Sueldo Basico de escala + Antiguedad del empleado + Remunerativo de escala) /25 * Cantidad de
@@ -640,6 +758,124 @@ const formatearNumero = (numero) => {
 		maximumFractionDigits: 2,
 	});
 };
+//************************************************************************************** */
+
+//************************************************************************************** */
+/**
+ * *FUNCION numeroALetras convierte un determinado numero a su version escrita en letras
+ * @param:
+ * 		num: es el número que se desea convertir
+ */
+const numeroALetras = (num) => {
+	const unidades = [
+		'',
+		'uno',
+		'dos',
+		'tres',
+		'cuatro',
+		'cinco',
+		'seis',
+		'siete',
+		'ocho',
+		'nueve',
+	];
+	const especiales = [
+		'diez',
+		'once',
+		'doce',
+		'trece',
+		'catorce',
+		'quince',
+		'dieciséis',
+		'diecisiete',
+		'dieciocho',
+		'diecinueve',
+	];
+	const decenas = [
+		'',
+		'diez',
+		'veinte',
+		'treinta',
+		'cuarenta',
+		'cincuenta',
+		'sesenta',
+		'setenta',
+		'ochenta',
+		'noventa',
+	];
+	const centenas = [
+		'',
+		'cien',
+		'doscientos',
+		'trescientos',
+		'cuatrocientos',
+		'quinientos',
+		'seiscientos',
+		'setecientos',
+		'ochocientos',
+		'novecientos',
+	];
+
+	const convertir = (num) => {
+		if (num === 0) return 'cero';
+		if (num < 10) return unidades[num];
+		if (num < 20) return especiales[num - 10];
+		if (num < 100) {
+			const unidad = num % 10;
+			const decena = Math.floor(num / 10);
+			return decenas[decena] + (unidad ? ' y ' + unidades[unidad] : '');
+		}
+		if (num < 1000) {
+			const centena = Math.floor(num / 100);
+			const resto = num % 100;
+			return (
+				(centena === 1 && resto === 0 ? 'cien' : centenas[centena]) +
+				(resto ? ' ' + convertir(resto) : '')
+			);
+		}
+		if (num < 1000000) {
+			const miles = Math.floor(num / 1000);
+			const resto = num % 1000;
+			return (
+				(miles === 1 ? 'mil' : convertir(miles) + ' mil') +
+				(resto ? ' ' + convertir(resto) : '')
+			);
+		}
+		if (num < 1000000000) {
+			const millones = Math.floor(num / 1000000);
+			const resto = num % 1000000;
+			return (
+				(millones === 1 ? 'un millón' : convertir(millones) + ' millones') +
+				(resto ? ' ' + convertir(resto) : '')
+			);
+		}
+		const milesMillones = Math.floor(num / 1000000000);
+		const resto = num % 1000000000;
+		return (
+			(milesMillones === 1
+				? 'mil millones'
+				: convertir(milesMillones) + ' mil millones') +
+			(resto ? ' ' + convertir(resto) : '')
+		);
+	};
+
+	const convertirParteDecimal = (num) => {
+		const decimales = Math.round(num * 100); // Redondeamos la parte decimal a dos posiciones
+		return `${decimales.toString().padStart(2, '0')}/100`;
+	};
+
+	const [parteEntera, parteDecimal] = num.toFixed(2).split('.').map(Number);
+
+	const resultadoParteEntera = convertir(parteEntera);
+	const resultadoParteDecimal =
+		parteDecimal !== undefined ? convertirParteDecimal(parteDecimal / 100) : '';
+
+	return (
+		resultadoParteEntera + (resultadoParteDecimal ? ' con ' + resultadoParteDecimal : '')
+	);
+};
+
+//************************************************************************************** */
 
 //FIN FUNCIONES A UTILIZAR ------------------------------------------------------------------------------------------
 export {

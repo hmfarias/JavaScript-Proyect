@@ -33,11 +33,11 @@ class Empleado {
 }
 
 class Cobertura {
-	constructor(id, ano, mes, dni, horas, feriados, horasNocturnas) {
+	constructor(id, ano, mes, idEmpleado, horas, feriados, horasNocturnas) {
 		this.id = id;
 		this.ano = ano;
 		this.mes = mes;
-		this.dni = dni;
+		this.idEmpleado = idEmpleado;
 		this.horas = horas;
 		this.feriados = feriados;
 		this.horasNocturnas = horasNocturnas;
