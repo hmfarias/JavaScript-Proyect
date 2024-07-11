@@ -93,9 +93,9 @@ const renderizaEmpleados = (mes, ano) => {
 							ID: ${element.id}<br />
 							CUIL: ${element.cuil} <br />
 							DNI: ${element.dni}<br />
-							FECHA NACIMIENTO: ${element.fechaNacimiento.slice(0, 10)}<br />
-							FECHA ALTA: ${element.fechaAlta.slice(0, 10)} <br />
-							FECHA BAJA: ${element.fechaBaja.slice(0, 10)} <br />
+							FECHA NACIMIENTO: ${formatearFecha(element.fechaNacimiento)}<br />
+							FECHA ALTA: ${formatearFecha(element.fechaAlta)} <br />
+							FECHA BAJA: ${formatearFecha(element.fechaBaja)} <br />
 							EMAIL: ${element.email} <br />
 							SUVICO: ${element.suvico} <br />
 							------------------- <br />
@@ -310,10 +310,12 @@ const generarRecibo = (event) => {
 				LEGAJO: ${EMPLEADO_ACTIVO.id}<br />
 				CUIL: ${EMPLEADO_ACTIVO.cuil} <br />
 				DNI: ${EMPLEADO_ACTIVO.dni}<br />
-				FECHA NACIMIENTO: ${EMPLEADO_ACTIVO.fechaNacimiento}<br />
-				FECHA ALTA: ${EMPLEADO_ACTIVO.fechaAlta} Antiguedad: ${ANOS_ANTIGUEDAD} años Pje:
+				FECHA NACIMIENTO: ${formatearFecha(EMPLEADO_ACTIVO.fechaNacimiento)}<br />
+				FECHA ALTA: ${formatearFecha(
+					EMPLEADO_ACTIVO.fechaAlta
+				)} Antiguedad: ${ANOS_ANTIGUEDAD} años Pje:
 				${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%<br />
-				FECHA BAJA: ${EMPLEADO_ACTIVO.fechaBaja} <br />
+				FECHA BAJA: ${formatearFecha(EMPLEADO_ACTIVO.fechaBaja)} <br />
 				EMAIL: ${EMPLEADO_ACTIVO.email} <br />
 				CATEGORIA: ${EMPLEADO_ACTIVO.tipo} Estado: ${EMPLEADO_ACTIVO.estado} SUVICO:
 				${
@@ -751,7 +753,12 @@ const calcularImporteFeriados = (
 
 	return IMPORTE_FERIADOS;
 };
+//************************************************************************************** */
 
+/**
+ * *FUNCIÓN: formatearNumero, da formato a los numeros asignandoles dos digitos decimales
+ * @param numero, es el numero que se desea formatear
+ */
 const formatearNumero = (numero) => {
 	return numero.toLocaleString('de-DE', {
 		minimumFractionDigits: 2,
@@ -759,6 +766,18 @@ const formatearNumero = (numero) => {
 	});
 };
 //************************************************************************************** */
+
+//************************************************************************************** */
+/**
+ * *FUNCION formatearFecha, da formato a las fechas, devolviendo el formato DD/MM/YYYY
+ * si la fecha es vacía, devuelve un string con guiones
+ * @param fecha, es la fecha que se desea formatear
+ */
+const formatearFecha = (fecha) => {
+	if (!fecha) return '------------';
+	const opciones = { day: '2-digit', month: '2-digit', year: 'numeric' };
+	return new Date(fecha).toLocaleDateString('es-ES', opciones);
+};
 
 //************************************************************************************** */
 /**
