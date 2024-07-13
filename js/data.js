@@ -25,7 +25,7 @@ const EMPLEADOS_RESULT = await pedirEmpleados(); //pido los empleados a la API
 // START CREO EL ARRAY DE EMPLEADOS USANDO EL ARRAY OBTENIDO DE LA API
 //************************************************************************************** */
 /**
- * *FUNCION: crearEmpleados crea un array de empleados utilizando el array de objetos pedido a la API Random User Gerator API https://randomuser.me
+ * *FUNCION: crearEmpleados crea un array de empleados utilizando el array de objetos pedido a la API Random User Generator API https://randomuser.me
  */
 const crearEmpleados = () => {
 	const EMPLEADOS_RANDOM = [];

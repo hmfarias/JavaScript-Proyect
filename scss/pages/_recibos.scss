@@ -8,10 +8,10 @@
 }
 
 .recibo {
-	font-size: 14px;
+	font-size: 12px;
 	max-width: 800px;
 	margin: auto;
-	padding: 20px;
+	padding: 10px;
 	border: 1px solid #000;
 }
 .recibo header {
@@ -19,8 +19,8 @@
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid #000;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+	// padding-bottom: 10px;
+	// margin-bottom: 20px;
 }
 .recibo header img {
 	max-width: 100px;
@@ -30,7 +30,7 @@
 }
 .recibo footer {
 	border-top: 1px solid #000;
-	padding-top: 10px;
+	// padding-top: 10px;
 }
 table {
 	width: 100%;
@@ -56,6 +56,15 @@ td {
 }
 .left {
 	text-align: left;
+}
+.datos {
+	border-bottom: 1px solid #000;
+	padding: 2px;
+}
+.nombreFecha {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
 }
 /* ---------------------------------------------------------*/
 /* END RECIBOS PAGE -----------------------------------------------*/

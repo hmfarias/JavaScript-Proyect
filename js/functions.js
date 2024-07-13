@@ -295,7 +295,7 @@ const generarRecibo = (event) => {
 	//START ARMADO DEL HTML A RENDERIZAR ---------------------------------------------------------------
 	const HTML = `
 	<div class="recibo" id="recibo">
-		<header>
+		<header id="reciboHeader">
 			<img
 				class="logo"
 				id="logo"
@@ -305,36 +305,40 @@ const generarRecibo = (event) => {
 			<h4>Recibo de Sueldo</h4>
 		</header>
 		<div class="content">
+			<div class="datos">
+			<div class="nombreFecha">
 			<h4 id="nombreRecibo">${EMPLEADO_ACTIVO.nombre}</h4>
+			<h6>Fecha de proceso: ${FECHA_HOY}</h6>
+			</div>
 			<p>
-				LEGAJO: ${EMPLEADO_ACTIVO.id}<br />
-				CUIL: ${EMPLEADO_ACTIVO.cuil} <br />
-				DNI: ${EMPLEADO_ACTIVO.dni}<br />
-				FECHA NACIMIENTO: ${formatearFecha(EMPLEADO_ACTIVO.fechaNacimiento)}<br />
-				FECHA ALTA: ${formatearFecha(
-					EMPLEADO_ACTIVO.fechaAlta
-				)} Antiguedad: ${ANOS_ANTIGUEDAD} años Pje:
-				${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%<br />
-				FECHA BAJA: ${formatearFecha(EMPLEADO_ACTIVO.fechaBaja)} <br />
-				EMAIL: ${EMPLEADO_ACTIVO.email} <br />
-				CATEGORIA: ${EMPLEADO_ACTIVO.tipo} Estado: ${EMPLEADO_ACTIVO.estado} SUVICO:
-				${
-					EMPLEADO_ACTIVO.suvico
-				} <br />----------------------------------------------------------------------
+				<b>LEGAJO:</b> ${EMPLEADO_ACTIVO.id} &nbsp;&nbsp;&nbsp;
+				<b>CUIL:</b> ${EMPLEADO_ACTIVO.cuil}&nbsp;&nbsp;&nbsp;
+				<b>DNI:</b> ${EMPLEADO_ACTIVO.dni}&nbsp;&nbsp;&nbsp;&nbsp;
+				<b>FECHA NACIMIENTO:</b> ${formatearFecha(EMPLEADO_ACTIVO.fechaNacimiento)} <br />
+				<b>FECHA ALTA:</b> ${formatearFecha(EMPLEADO_ACTIVO.fechaAlta)} &nbsp;&nbsp;&nbsp;
+				<b>Antiguedad:</b> ${ANOS_ANTIGUEDAD} años Pje:
+				${formatearNumero(PORCENTAJE_ANTIGUEDAD * 100)}%&nbsp;&nbsp;&nbsp;&nbsp; 
+				<b>FECHA BAJA:</b> ${formatearFecha(EMPLEADO_ACTIVO.fechaBaja)} <br />
+				<b>EMAIL:</b> ${EMPLEADO_ACTIVO.email} &nbsp;&nbsp;&nbsp;
+				<b>CATEGORIA:</b> ${EMPLEADO_ACTIVO.tipo} &nbsp;&nbsp;
+				<b>Estado:</b> ${EMPLEADO_ACTIVO.estado} &nbsp;&nbsp;
+				<b>SUVICO:</b>${EMPLEADO_ACTIVO.suvico} 
 			</p>
-			<h5>Mes: ${MES} Año: ${ANO}</h5>
+			</div>
+			<div class="datos">
+			<h5 id="periodoLiquidado">Mes: ${MES} Año: ${ANO}</h5>
 			<p>
-				<strong>DATOS PARA LIQUIDACIÓN:</strong><br />
-				Fecha de proceso: ${FECHA_HOY}<br />
-				<strong>COBERTURA:</strong><br />
-				Días del mes: ${DIAS_MES}<br />
-				Horas base: ${HORAS_BASE}<br />
-				HORAS TRABAJADAS: ${COBERTURA_ACTIVA.horas}<br />
-				DIAS A LIQUIDAR: ${DIAS_TRABAJADOS}<br />
-				FERIADOS TRABAJADOS: ${COBERTURA_ACTIVA.feriados}<br />
-				HORAS EXTRA: ${HORAS_EXTRA}<br />
-				HORAS NOCTURNAS: ${COBERTURA_ACTIVA.horasNocturnas} <br />
+				<b>Días del mes:</b> ${DIAS_MES} &nbsp;&nbsp;
+				<b>Horas base:</b> ${HORAS_BASE}<br />
+				<strong>COBERTURA REALIZADA</strong><br />
+				<b>HORAS TRABAJADAS:</b> ${COBERTURA_ACTIVA.horas}&nbsp;&nbsp;
+				<b>DIAS A LIQUIDAR:</b> ${DIAS_TRABAJADOS}<br />
+				<b>FERIADOS TRABAJADOS:</b> ${COBERTURA_ACTIVA.feriados}&nbsp;&nbsp;
+				<b>HORAS EXTRA:</b> ${HORAS_EXTRA}&nbsp;&nbsp;
+				<b>HORAS NOCTURNAS:</b> ${COBERTURA_ACTIVA.horasNocturnas} <br />
 			</p>
+			</div>
+			<div id="liquidacion">
 			<h6>LIQUIDACIÓN:</h6>
 			<table>
                 <thead>
@@ -448,10 +452,11 @@ const generarRecibo = (event) => {
                 </tbody>
             </table>
 			<p>Son Pesos: ${TOTAL_LETRAS}</p>
+			</div>
 	
 
 		</div>
-		<footer>
+		<footer id="reciboFooter">
 			<p>
 				RF Seguridad Integral SRL - Félix Frías 465 - PB - Local 1 - Tel: 3517777777
 			</p>
@@ -498,7 +503,7 @@ const downloadReceipt = (event) => {
 	)}.pdf`;
 
 	const opt = {
-		margin: [10, 10, 10, 10],
+		margin: [2, 10, 10, 10],
 		filename: NOMBRE_RECIBO,
 		image: { type: 'pdf', quality: 0.98 },
 		html2canvas: { scale: 2 },
@@ -809,7 +814,7 @@ const formatearNumero = (numero) => {
  * @param fecha, es la fecha que se desea formatear
  */
 const formatearFecha = (fecha) => {
-	if (!fecha) return '------------';
+	if (!fecha) return '-----';
 	const opciones = { day: '2-digit', month: '2-digit', year: 'numeric' };
 	return new Date(fecha).toLocaleDateString('es-ES', opciones);
 };
