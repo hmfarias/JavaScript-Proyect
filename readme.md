@@ -50,7 +50,12 @@
         <li><a href="#instalación">Instalación</a></li>
       </ul>
     </li>
-    <li><a href="#documentación-y-uso">Documentación y uso</a></li>
+    <li><a href="#documentación-y-uso">Documentación y uso</a>
+      <ul>
+        <li><a href="#el-menu">El menú de la página</a></li>
+        <li><a href="#instalación">Instalación</a></li>
+      </ul>    
+    </li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -149,6 +154,7 @@ git clone https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad.git
 
 ## Documentación y uso
 
+### El menú de la página
 Inicialmente, la página muestra una barra de navegación consitente en las siguiente opciones:
 - **INICIO:** Es la página principal en si misma. En ella se muestra información relacionada a la empresa, artículos sobre seguridad que se irán actualizando diariamente, baner animado con los principales clientes de la empresa y un footer con un botón para solicitar una cotización de servicio, datos de contacto y un mapa enlazado a Google Maps, con la ubiación de la oficina central de la empresa.
   
