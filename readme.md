@@ -223,17 +223,17 @@ El sistema utiliza una serie de valores constantes, que se corresponden con los 
 - PRESENTISMO = 112000
 - REMUNERATIVO = 123000
 - VIATICOS = 219000
-
+  
 **CONCEPTOS NO REMUNERATIVOS**
 - NO_REMUNERATIVO = 30000
-
+  
 **DESCUENTOS DE LEY - aplican solo sobre conceptos REMUNERATIVOS**
 - PORCE_JUBILACION = 0.11
 - PORCE_LEY19032 = 0.03
 - PORCE_OBRA_SOCIAL = 0.03
 - PORCE_SUVICO = 0.03
 - PORCE_APORTE_SOLIDARIO = 0.02
-
+  
 **Array de objetos**
 - Array de objetos de EMPLEADOS
 - Array de objetos de COBERTURAS
