@@ -13,15 +13,20 @@
   <h2 align="center">PROYECTO RF SEGURDIAD INTEGRAL SRL</h2>
 
   <p align="center">
-   Una página web institucional, con una sección para usuarios resgistrados con opciones administrativas como la liquidación de sueldo e impresión de recibos.
-   
+    Una página web institucional, con una sección para usuarios resgistrados con opciones administrativas como la liquidación de sueldo e impresión de recibos.
     <br />
-    <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/">Ver repositorio</a>
+    <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad"><strong>Explora los documentos »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad">Ver repositorio</a>
     ·
     <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/issues">Reportar un error</a>
     ·
     <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/issues">Solicitar función</a>
   </p>
+
+
+  
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -56,142 +61,49 @@
 
 ## Sobre el Proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/hmfarias/03-acamica-delilah)
 
-Delilah Resto es el backend de un sistema de pedidos en línea para un restaurante que opera las partes necesarias para montar una API REST que permite operaciones CRUD en una estructura de datos.
+
+El proyecto RF SEGURIDAD INTEGRAL SRL, consiste en una página web institucional, con información relacionada a la empresa de Seguridad Privada RF SEGURIDAD, y con una sección para usuarios registrados, en donde se cuenta con opciones de manejo administrativo.
+En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERES, en la cual se ha programado un simulador, que consume dados de la API Random User Gerator API https://randomuser.me, para generar la base de datos de empleados y las diferentes coberturas de servicios efectuadas durante el año 2024 (enero a junio).
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
 ### Construido con
 
-- [![NodeJS][nodejs]][node-url] Como entorno
-- [![Express][express]][express-url] Framework
-- [![Nodemon][nodemon]][nodemon-url] Utilidad de interface
-- [![Ratelimit][ratelimit]][ratelimit-url] Control del tráfico entrante en la API
-- [![JSONWeb][jsonweb]][jsonweb-url] Estándar para propagar entre dos partes de forma segura, la identidad de un determinado usuario y sus privilegios. Cifrado de contraseña con la biblioteca [bcrypt](https://www.npmjs.com/package/bcrypt 'bcrypy').
-- [![XAMPP][xampp]][xampp-url] como Servidor
-- [![MySQL][mysql]][mysql-url] Sistema de administración de Base de Datos
-- [![Workbench][workbench]][workbench-url] Entorno gráfico para el diseño de bases de datos, servidores, administración y mantenimiento del sistema MySQL
-- [![Sequelize][sequelize]][sequelize-url] ORM para Nodejs que permite manipular la Base de Datos SQL de forma sencilla
-- [![Postman][postman]][postman-url] Herramienta para crear solicitudes y probar la API de forma sencilla
-- [![Swagger][swagger]][swagger-url] Especificación abierta para definir la API REST
-- [![Others][others]][others-url] Paquetes adicionales para seguridad y manejo de CORS como [Helmet](https://www.npmjs.com/package/helmet 'Helmet'), [Compression](https://www.npmjs.com/package/helmet 'Compression') y [Cors](https://www.npmjs.com/package/cors 'Cors')
+- **HTML5:** (HyperText Markup Language) como lenguaje de marcación de hipertéxto estándar utilizado para crear y diseñar páginas web.
+- **CSS3** (Cascading Style Sheets, Level 3) como lenguaje de diseño gráfico utilizado para controlar el aspecto visual de las páginas web, separando el contenido (HTML) de la presentación visual (CSS).
+- **JavaScript (ES6+)** como lenguaje de programación interpretado, de alto nivel y dinámico. Se ejecuta en el navegador del cliente, lo que permite la creación de páginas web interactivas y dinámicas. 
+- **Bootstrap:** como marco de desarrollo front-end que facilita la creación de sitios web y aplicaciones web responsivas y móviles.
+- **Sweet Alert:** como biblioteca de JavaScript que facilita la creación de alertas y diálogos personalizados y estéticamente agradables en la aplicacion web.
+- **HTML2pdf** como biblioteca de JavaScript que permite convertir contenido HTML directamente en archivos PDF en el navegador web.
+
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
 ### Descripción general
 
-Delilah Resto es el backend de un sistema de pedidos en línea para un restaurante que opera las partes necesarias para montar una API REST que permite operaciones CRUD en una estructura de datos.
+El proyecto RF Seguridad, consiste en una página web institucional, programada con HTML, CSS y BootStrap en lo referente a las opciones de la barra de navegacion NOSOTROS, SERVICIOS Y CONTACTO; y para la opción ADMINISTRACIÓN y LOGIN, se ha agregado programación con JavaScript, dotándolas de interactividad y comportamiento dinámico,
+
 
 #### Entregable
 
-El objetivo del proyecto Delilah Resto presentado, es emular la tarea de un desarrollador backend.
+El proyecto es sitio web interactivo, que utiliza JavaScript y simula distintos procesos administrativos de una empresa de Seguridad Privada, solucionando la tarea de liquidar los haberes del personal conforme a la escala de sueldo vigente para los trabajadores de seguridad privada y en función del mes y las horas de servicios efectivamente cubiertas por cada empleado.
+Se ha utilizado FETCH y JSON para obtener datos de la API Random User Gerator API https://randomuser.me y construir la base de datos de empleados; así como diversas herramientas de JavaScript como librerías, promesas y asincronía para controlar eventos en la interfáz y producir animaciones en respuesta.
+
 Los entregables son:
 
-- Archivos JS
-- Archivo SQL o instalación desde la aplicación
-- Archivo de Documentación
-- [Readme.md](https://github.com/hmfarias/03-acamica-delilah/blob/master/README-esp.md) con instrucciones de instalación.
+- Páginas HTML
+- Código fuente en archivos JavaScript.
+- [Readme.md](https://https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/edit/main/readme.md) con instrucciones de uso.
 
-(El frontend no está incluido en el paquete entregable ni en los recursos de este proyecto. El foco está en el backend.)
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
 #### Uso de Librerías
 
-No se usaron librerías, plugins o cualquier otro recurso que no esté especificado en la guía de instrucciones recibida, ya que el objetivo del proyecto es validar los conocimientos básicos.
+- **Sweet Alert:** como biblioteca de JavaScript que facilita la creación de alertas y diálogos personalizados y estéticamente agradables en la aplicacion web.
+- **HTML2pdf** como biblioteca de JavaScript que permite convertir contenido HTML directamente en archivos PDF en el navegador web.
 
-<p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
-
-#### Proceso de creación
-
-##### Pasos seguidos
-
-- **Paso 1: Introducción al proyecto**
-  Entre los recursos recibidos, se analizó cada una de las vistas para entender el proyecto en su totalidad.
-  Se observó detalladamente como es el comportamiento de la aplicación y se empezó a diagnosticar a grandes rasgos la arquitectura de la misma.
-
-- **Paso 2: Definición de la especificación**
-  En base a la información relevada se realizó la documentación con Swagger bajo el estándar OpenAPI.
-  Se creó un archivo `delilahResto.json` en el directorio `SETUP` del proyecto y se completó la lista de Endpoints.
-
-- **Paso 3: Creación del entorno**
-  Se creó una carpeta en la computadora y se inició un repositorio GIT sobre esa carpeta. Asimismo, el proyecto NodejS se inicializó creando el archivo package.json.
-  También se instalaron las dependencias necesarias y se creó el servidor web.
-
-- **Paso 4: Endpoints**
-  Se instaló Express en el proyecto y se comenzó a definir todas las rutas que se especificaron en la documentación.
-  Se utilizaron los métodos Get, Post, Put y Delete dependiendo de la acción a realizar.
-
-- **Paso 5: Estructura de la información**
-  La estructura de la base de datos fue diseñada para soportar todo el flujo de la aplicación. Para ello se revisó nuevamente cada una de las vistas y se diseñó cada tabla en base a la información expedita de dichas vistas.
-
-- **Paso 6: Conexión a la base de datos**
-  Se introdujo el código necesario para la conexión a la base de datos y se habilitó un puerto local, conectado a una base de datos MySQL.
-
-**Listar y crear Productos**
-
-- **Paso 1: estructura y tabla de Productos**
-  En base a la especificación creada previamente, se creó la tabla Productos con las columnas requeridas para cumplir con la especificación de la API.
-
-- **Step 2: CRUD para Productos**
-  Se agregó Express al proyecto, y se creó el primer endpoint de Products y se generaron las operaciones necesarias para poder crear, leer, actualizar y borrar un producto.
-
-**Sistema de Usuarios**
-
-- **Paso 1: Estructura y tabla de Usuarios**
-  En base a la especificación creada previamente, se creó la tabla Usuarios con las columnas requeridas para cumplir con la especificación de la API.
-  La tabla **Usuarios** está relacionada con la tabla **Roles**. Al crearlo se tuvieron en cuenta las siguientes condiciones:
-
-  - Un usuario tiene un solo rol.
-  - Se puede asignar un rol a varios usuarios.
-
-- **Paso 2: Registro e inicio de sesión de Usuario**
-  Según la especificación, se creó el endpoint correspondiente para brindarle al usuario una forma de crear una nueva cuenta.
-  Asimismo, se incorporó el Token **JWT** para brindar a los usuarios registrados una forma de iniciar sesión en la plataforma.
-
-- **Paso 3: Rol**
-  Se generó una estrategia de validación de roles para todos endpoints existentes. Por ejemplo, que `solo los usuarios administradores pueden crear, editar y eliminar productos, y que los usuarios comunes solo tienen acceso a su información personal`.
-
-**Creación de Roles**
-
-- **Paso 1: Estructura y tabla de Roles**
-  En base a la especificación creada anteriormente, se creó la tabla Roles con las columnas requeridas para cumplir con la especificación de la API.
-
-- **Step 2: CRUD para Roles**
-  Se generaron las operaciones necesarias para poder crear, leer, actualizar y borrar roles.
-
-**Creación de Métodos de Pago**
-
-- **Paso 1: Estructura y tabla de Métodos de Pago**
-  En base a la especificación creada anteriormente, se creó la tabla Métodos de pago con las columnas requeridas para cumplir con la especificación de la API.
-
-- **Step 2: CRUD para Métodos de Pago**
-  Se generaron las operaciones necesarias para poder crear, leer, actualizar y eliminar un Medios de Pago.
-
-**Creación de Órdenes**
-
-- **Paso 1: estructura y tabla de Órdenes**
-  La tabla de Órdenes está relacionada con dos tablas: **Usuarios** y **Productos**. A la hora de crearla se han tenido en cuenta las siguientes condiciones:
-
-  - Una órden puede ser realizada por un solo usuario.
-  - Un usuario puede realizar más de una órden.
-  - Una órden puede contener varios productos.
-  - Un producto puede formar parte de varias órdenes.
-
-- **Paso 2: Crear y recibir Órdenes**
-  Con las tablas ya creadas, se generó el primer endpoint para la creación de las Órdenes. Siempre en base a la especificación para saber qué se debe recibir y qué se debe devolver.
-  Luego se creó un nuevo endpoint para obtener todas las órdenes. Esta consulta no solo devuelve el detalle de las órdenes, sino también el detalle de todos los **productos**, **usuarios** y **métodos de pago** relacionados a la misma.
-  El GET de todas las órdenes solo puede ser ejecutado por un administrador. Un usuario registrado solo recibe los datos de su propia Órden.
-
-- **Paso 3: Edición de Órdenes**
-  El último paso para terminar con la API fue proporcionar al administrador herramientas de edición sobre las órdenes realizadas para actualizar el estado de las mismas ('nueva', 'confirmada', 'preparando', 'enviando', 'cancelada', 'entregada'). Es por eso que se creó un endpoint para realizar una actualización en la ruta de la Órden.
-
-**Rate Limit Policy**
-Finalmente, se incorporó el _Rate Limit Policy_ para permitir el control del tráfico entrante para la API al limitar la cantidad de solicitudes que la API puede recibir dentro de un período de tiempo determinado. Una vez que se alcanza el límite, la política rechaza todas las solicitudes, evitando así cualquier carga adicional en la API de back-end.
-
-> Cuando configura el _Rate Limit Policy_, puede especificar cualquier número de pares de valores de cuota (número de solicitudes) y ventana de tiempo (período de tiempo).
-> Consulte el tema [Archivo de Entorno](#el-archivo-de-entorno)
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
@@ -199,26 +111,16 @@ Finalmente, se incorporó el _Rate Limit Policy_ para permitir el control del tr
 
 ## Comenzando
 
-Esta guía describe paso a paso cómo configurar el entorno local para poner en marcha el sistema.
-Se indican las herramientas necesarias para montar el servidor, los pasos de instalación y configuración, la creación de la base de datos y su población y por último, la correcta integración entre ambas partes para poder utilizar la API de forma local u online.
+Esta guía describe paso a paso cómo utilizar el sitio web de RF SEGURIDAD INTEGRAL SRL.
 
 ### Prerequisitos
 
 Antes de comenzar la instalación, es necesario tener:
 
-- [Node Js](https://nodejs.org/en/ 'Node js')
-- [XAMPP](https://www.apachefriends.org/download.html 'XAMPP')
-- [MySQL Workbench](https://www.mysql.com/products/workbench/ 'MYSQL')
-- Instale [Nodemon](https://nodemon.io/ 'nodemon')
+- Contar con un IDE con capacidad para ejecutar el archivo index.html, o bien ejecutar el sitio desde https://hmfarias.github.io/JavaScript-Proyect-RFSeguridad/index.html
 
-  ```
-  npm install nodemon -g (for global installation)
-  npm install nodemon --save-dev (for local installation)
-  ```
 
-  <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
-
-### Instalación
+### Instalación (en caso de que se opte por bajar el proyecto a una ubicación local)
 
 1. ##### Clonar el proyecto del repositorio
 
@@ -231,87 +133,70 @@ git init
 - Clonar todo el proyecto:
 
 ```
-git clone https://github.com/hmfarias/03-acamica-delilah.git
+git clone https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad.git
 ```
 
-2. ##### Instalar Dependencias
 
-- En la raíz del proyecto, escriba el comando:
 
-```
-npm install
-```
+2. #### Ejecutar la página
 
-> Esto crea la carpeta _node_modules_ con las dependencias necesarias, como _express_, _sequelize_, _jwt_, etc.
+   Utilizando un IDE compatible (como VS Code o similar), para poner el la página en línea, bastará con seleccionar y ejecutar desde la raíz del proyecto el archivo index.html
 
-3. ##### Poner la Base de Datos en línea
-
-- Abra [XAMPP](https://www.apachefriends.org/download.html 'XAMPP'). Vaya a `Server Manage` e inicie `MySQL Database`
-- Abra [MySQL Workbench](https://www.mysql.com/products/workbench/ 'MYSQL') y establezca la conexión con la base de datos. Asegúrese de que la base de datos MySql se esté ejecutando en el puerto 3306.
-- En el proyecto existe una carpeta llamada `./setup`. En esta carpeta se encuentran los archivos de script necesarios para crear y llenar la base de datos con datos de prueba.
-  Desde MySQL Workbench, vaya a la opción `Archivo -> Abrir script SQL`, seleccione y ejecute el archivo `./setup/delilah_create.sql`. A continuación, seleccione y ejecute el archivo `./setup/delilah_inserts.sql`.
-
-> Esto crea la base de datos `delilah`, así como las tablas necesarias y los datos de prueba en las tablas creadas.
-
-  <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
-  
-4. #### Variables de Entorno
-
-##### El Archivo de Entorno
-
-Deberá crear o modificar el archivo `.env` en la carpeta raíz del proyecto.
-En este archivo, deberá configurar las siguientes variables de entorno:
-
-- Para configurar la conexión con la Base de Datos:
-  - **DB_SERVER= (ej: 127.0.0.1)**
-  - **DB_USER= (ej: root)**
-  - **DB_PWD=**
-  - **DB_NAME= delilah**
-  - **DB_PORT= 3306**
-  - **APP_PORT= 3000**
-    <br>
-- Cadena secreta para JWT. Son números y caracteres especiales que utilizará el servidor para generar el token para cada usuario que haya iniciado sesión. **NUNCA EXPONGA ESTA CADENA DE CARACTERES**
-  - **JWT_SECRET=(e.g. ger7gtlhiu&ylkjsd876fswihelgklmvals654sakltfghpa$)**
-    <br>
-- Tiempo de vida del Token
-  - **EXPIRE_TIME_TOKEN = 120m**
-    <br>
-- Número máximo de solicitudes según el _Rate Limit Policy_ deseado
-  - **MAX_REQUEST = ej: 20**
-    <br>
-- Tiempo de espera en minutos después de superar MAX_REQUEST
-  - **MINUTES_TO_WAIT = 1**
-
-5. #### Poner el Servidor en línea
-
-   Para poner el servidor en línea, ejecute el siguiente comando en la terminal (desde la raíz del proyecto):
-
-   ```
-   npm run server
-   ```
-
-   > Esto inicia el archivo `./src/server.js ` con nodemon.
-   > Verá el siguiente mensaje en la consola:
-   >
-   > ```
-   >   Listening in Port: 3000
-   >   Executing (default): SELECT 1+1 AS result
-   >   All OK - connected database
-   > ```
-
-6. #### La API está en línea y "escuchando" en el puerto seleccionado
-   Después de completar los pasos anteriores, puede comenzar a probar la API de Delilah Resto.
-   Puede usar [Postman](https://www.postman.com/ 'Postman') para ello.
-   En la carpeta `/setup`, puede encontrar la Colección Postman que prueba todos y cada uno de los endpoints de la API.
-   Inicie Postman e importe el archivo `./setup/API Delilah-postman_collection.json`. Allí tendrá todos los ejemplos de uso de cada endpoint disponible, así como los modelos Json de cada petición.
-   Tener en cuenta que de acuerdo con el esquema de seguridad implementado para la API, para probar cada punto final, deberá iniciar sesión en el sistema con un usuario existente (administrador o usuario común) y usar el token devuelto por el servidor en el encabezado de cada solicitud. .
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
-### Documentación
+### Documentación y uso
 
-Con Server "online", puede visitar la página de documentación, [http://localhost:3000/api/v1/docs/#/](http://localhost:3000/api/v1/docs/#/) para obtener los detalles de cada solicitud y su respuesta.
-También puede ir a [Swagger](https://editor.swagger.io/ 'Swagger') y arrastrar o importar el archivo ` ./setup/delilahResto.yaml` para obtener el mismo resultado.
+Inicialmente, la página muestra una barra de navegación consitente en las siguiente opciones:
+- **INICIO:** Es la página principal en si misma. En ella se muestra información relacionada a la empresa, artículos sobre seguridad que se irán actualizando diariamente, baner animado con los principales clientes de la empresa y un footer con un botón para solicitar una cotización de servicio, datos de contacto y un mapa enlazado a Google Maps, con la ubiación de la oficina central de la empresa.
+  
+- **NOSOTROS:** Esta opción linkea con la página web donde se muestra un video institucional así como información mas detallada sobre la empresa. Asimismo se describe la MISION, VISIÓN y VALORES de la empresa. Su footer es idéntico al de la página INICIO.
+  
+- **SERVICIOS:** Esta opción del menú, linkea a la página donde se muestran y describen los diferentes tipos de servicios de seguridad que presta la empresa. Cada uno está contenido en una card con un boton para solicitar cotización sobre ese servicio en particular. Su footer es idéntico al de la página INICIO.
+  
+- **CONTACTO:** Esta opción del menú, muestra la página donde se encuentra la información de contacto, dirección y redes socilaes, así como un formulario de contacto para que el cliente rellene y envíe a la empresa.
+
+- **ADMINISTRACIÓN:** (deshabilitada por defecto, ya que requiere ser un usuario registrado para habilitarse). En esta opción se encuentra el simulador solicitado en la materia JAVASCRIPT dictada por Coderhouse.
+  
+  **Uso**
+  
+  La opción es un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
+  
+  1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación.
+  Se despliega una página donde se debe seleccionar el MES y el AÑO sobre el que se desea trabajar.
+  
+  2- Se dispone de dos botones:
+  **BUSCAR RECIBOS:** el cual requiere que se haya rellenado los campos MES y AÑO del formulario.
+  **CARGAR ULTIMO LOTE:** trae desde el LOCAL STORAGE, las claves MES y AÑO y las toma como seleccionadas para trabajar con ese período. Esto resulta válido, en el caso de que el sistema se haya utilizado con anterioridad, caso contrario el botón estará deshabilitado.
+  
+  3- Una vez seleccionado el MES y el AÑO, el sistema comienza el proceso de generación de la base de datos de empleados y las diferentes coberturas de servicio (random), que cada empleado a realizado para ese período.
+
+  4- El sistema renderiza en la pantalla, la información de cada empleado. La acomoda en cards, con foto del empleado y el resto de la información completa del mismo.
+
+  5- Cada card tiene al pie el boton RECIBO, con un listener del evento CLICK configurado para que al presionarlo, se calcule la liquidación de sueldo de ese empleado, en base al período seleccionado y a la cantidad de horas de servicio que ha cubierto.
+
+  6- El resultado del proceso se muestra en una ventana modal, donde se observa:
+    - el logo de la empresa,
+    - el titulo RECIBO DE SUELDO,
+    - el período en cuestión,
+    - los datos del empleado,
+    - los datos sobre la cobertura realizada por ese empleado
+    - la liquidación de cada uno de los conceptos (remunerativos y no remunerativos) que conforman la escala de haberes vigente para los empleados de Seguridad Privada.
+
+  7- Al pié de la ventana modal, se despliegan tres botones:
+  
+  - **IMPRIMIR:** impprime el recibo de sueldo
+  
+  - **DESCARGAR PDF:** descarga el recibo de sueldo del empleado, colocando como nómbre de archivo el AÑO, el MES y el NOMBRE DEL EMPLEAD. Ejemplo: si se se está trabajando con el mes 02 y el año 2024 en la card del empleado Juan López, al presionar el boton DESCARGAR PDF, se descargará el archivo 2024-02-Lopez Juan.pdf
+    
+  - **CERRAR:** cierra la ventana modal.
+  
+
+
+- **LOGIN:**
+
+
+
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 <!-- CONTRIBUTING -->
