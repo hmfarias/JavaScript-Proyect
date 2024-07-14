@@ -240,7 +240,7 @@ El sistema utiliza una serie de valores constantes, que se corresponden con los 
 - Array de objetos de COBERTURAS
 
 #### Conceptos
-En base al período seleccionado (AÑO y MES), y a la cantidad de horas efectivamente cubiertas, el sistema calcula cada uno de los concpetos.
+En base al período seleccionado (AÑO y MES), y a la cantidad de horas efectivamente cubiertas por el empleado, el sistema calcula cada uno de los concpetos.
 
 - **HORAS BASE DEL MES:** 
  En los meses de 30 días las horas base son 208.
