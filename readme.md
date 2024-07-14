@@ -154,7 +154,7 @@ git clone https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad.git
 
 ## Documentación y uso
 
-### El menú de la página
+### El menu
 Inicialmente, la página muestra una barra de navegación consitente en las siguiente opciones:
 - **INICIO:** Es la página principal en si misma. En ella se muestra información relacionada a la empresa, artículos sobre seguridad que se irán actualizando diariamente, baner animado con los principales clientes de la empresa y un footer con un botón para solicitar una cotización de servicio, datos de contacto y un mapa enlazado a Google Maps, con la ubiación de la oficina central de la empresa.
   
