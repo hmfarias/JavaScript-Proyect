@@ -1,11 +1,13 @@
-# JavaScript Project RF Seguridad prueba
+# JavaScript Project RF Seguridad
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fhmfarias.github.io%2FJavaScript-Proyect-RFSeguridad%2F)](https://hmfarias.github.io/JavaScript-Proyect-RFSeguridad/)
 
 ## Descripción
+
 Este proyecto de JavaScript está diseñado para la gestión y seguridad de RF. Incluye funcionalidades avanzadas y una interfaz de usuario intuitiva para facilitar la administración y monitoreo de la seguridad.
 
 ## Tabla de Contenidos
+
 - [Características](#características)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Instalación](#instalación)
@@ -14,6 +16,7 @@ Este proyecto de JavaScript está diseñado para la gestión y seguridad de RF. 
 - [Licencia](#licencia)
 
 ## Características
+
 - Gestión de usuarios y roles
 - Monitoreo en tiempo real
 - Reportes y estadísticas detalladas
@@ -21,6 +24,7 @@ Este proyecto de JavaScript está diseñado para la gestión y seguridad de RF. 
 - Seguridad avanzada y autenticación
 
 ## Tecnologías Utilizadas
+
 - **HTML5**
 - **CSS3**
 - **JavaScript (ES6+)**
@@ -28,8 +32,10 @@ Este proyecto de JavaScript está diseñado para la gestión y seguridad de RF. 
 - **APIs REST**
 
 ## Instalación
+
 Para clonar y ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
 ```bash
 git clone https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad.git
 cd JavaScript-Proyect-RFSeguridad
+```
