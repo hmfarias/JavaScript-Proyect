@@ -89,7 +89,7 @@
 							</li>
 							<li class="nav-item dropdown">
 								<a
-									class="nav-link dropdown-toggle"
+									class="nav-link dropdown-toggle disabled"
 									id="nav-item-admin"
 									href="#"
 									role="button"
@@ -111,6 +111,9 @@
 										<a class="dropdown-item disabled" href="#">Otra futura acción</a>
 									</li>
 								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-warning" id="loginButton" href="#">Login</a>
 							</li>
 						</ul>
 					</div>
@@ -403,6 +406,57 @@
 				<!-- End copyright banner -->
 			</footer>
 			<!-- End Footer ---------------------------------------------->
+
+			<!-- Start Modal Login --------------------------------------->
+			<!-- Modal -->
+			<div
+				class="modal fade"
+				id="loginModal"
+				tabindex="-1"
+				role="dialog"
+				aria-labelledby="loginModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="loginModalLabel">Login</h5>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<form id="loginForm">
+								<div class="form-group">
+									<label for="username">Usuario</label>
+									<input
+										type="text"
+										class="form-control"
+										id="username"
+										name="username"
+										required
+									/>
+								</div>
+								<div class="form-group">
+									<label for="password">Contraseña</label>
+									<input
+										type="password"
+										class="form-control"
+										id="password"
+										name="password"
+										required
+									/>
+								</div>
+								<button type="submit" class="btn btn-primary">Login</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Modal Login ------------------------------------------------>
 		</main>
 		<!-- Start BS 5.3.3 scripts ------------------------------------------------>
 		<script
@@ -411,5 +465,9 @@
 			crossorigin="anonymous"
 		></script>
 		<!-- End BS 5.3.3 scripts -------------------------------------------------->
+
+		<!-- Start local scripts ------------------------------------------------>
+		<script type="module" src="./js/index.js"></script>
+		<!-- End local scripts -------------------------------------------------->
 	</body>
 </html>
