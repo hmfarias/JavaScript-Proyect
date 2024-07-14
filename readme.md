@@ -53,7 +53,7 @@
     <li><a href="#documentación-y-uso">Documentación y uso</a>
       <ul>
         <li><a href="#el-menu">El menú de la página</a></li>
-        <li><a href="#instalación">Instalación</a></li>
+        <li><a href="#opcion-ADMINISTRACION">La opción ADMINISTRACION</a></li>
       </ul>    
     </li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
@@ -165,7 +165,13 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
 - **CONTACTO:** Esta opción del menú, muestra la página donde se encuentra la información de contacto, dirección y redes socilaes, así como un formulario de contacto para que el cliente rellene y envíe a la empresa.
 
 - **ADMINISTRACIÓN:** (deshabilitada por defecto, ya que requiere ser un usuario registrado para habilitarse). En esta opción se encuentra el simulador solicitado en la materia JAVASCRIPT dictada por Coderhouse.
+
+- **LOGIN:** Al seleccionar esta opción, se despliega una ventana modal donde se pide el usuario y la clave. Al presionar el boton LOGIN que se ubica abajo a la derecha de esta ventama modal, se realiza el logueo al sistema y se habilita la opción de la barra de navegacion ADMINISTRACION, dando acceso a la posibilidad de Liquidar el sueldo de un empleao e imprimir o descargar el recibo.
+  Una vez producido el acceso al sistema, esta opción LOGIN queda deshabilitada hasta que se selecciones CERRAR SESION ubicada en el menú desplegablte ADMINISTRACION.
+  **POR AHORA Y CON FINES DIDÁCTICOS, no existe un proceso de AUTENTICACIÓN formal, e ingresando cualquier usuario y cualquier clave el sistema permite el acceso.**
+  En el futuro, es en este login donde se realizara un proceso de autenticacion fuerte, contra alguna base de datos de usuarios.
   
+### Opcion ADMINISTRACION
   **Uso**
   
   La opción es un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
@@ -200,11 +206,7 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   - **CERRAR:** cierra la ventana modal.
   
 
-- **LOGIN:** Al seleccionar esta opción, se despliega una ventana modal donde se pide el usuario y la clave. Al presionar el boton LOGIN que se ubica abajo a la derecha de esta ventama modal, se realiza el logueo al sistema y se habilita la opción de la barra de navegacion ADMINISTRACION, dando acceso a la posibilidad de Liquidar el sueldo de un empleao e imprimir o descargar el recibo.
-  Una vez producido el acceso al sistema, esta opción LOGIN queda deshabilitada hasta que se selecciones CERRAR SESION ubicada en el menú desplegablte ADMINISTRACION.
-  **POR AHORA Y CON FINES DIDÁCTICOS, no existe un proceso de AUTENTICACIÓN formal, e ingresando cualquier usuario y cualquier clave el sistema permite el acceso.**
-  En el futuro, es en este login donde se realizara un proceso de autenticacion fuerte, contra alguna base de datos de usuarios.
-  
+
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 <!-- CONTRIBUTING -->
