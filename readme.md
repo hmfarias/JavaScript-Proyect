@@ -252,7 +252,7 @@ Link del Proyecto: [https://https://github.com/hmfarias/JavaScript-Proyect-RFSeg
 [license-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hugo-marcelo-farias
-[product-screenshot]: https://user-images.githubusercontent.com/56005148/192166732-ecbcd321-b61d-4998-a114-5d616846ed8d.png
+[product-screenshot]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/screenShot.webp
 [nodejs]: https://img.shields.io/badge/nodeJS-347012?style=for-the-badge&logo=nodedotjs&logoColor=white
 [node-url]: https://nodejs.org/
 [nodemon]: https://img.shields.io/badge/nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=4F4D3F
