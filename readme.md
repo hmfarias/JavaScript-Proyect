@@ -41,7 +41,6 @@
         <li><a href="#descripción-general">Desripción General</a></li>
           <ul><a href="#entregable">Entregable</a></ul>
           <ul><a href="#uso-de-librerías">Uso de Librerías</a></ul>
-          <ul><a href="#proceso-de-creación">Proceso de Creación</a></ul>
       </ul>
     </li>
     <li>
@@ -120,7 +119,8 @@ Antes de comenzar la instalación, es necesario tener:
 - Contar con un IDE con capacidad para ejecutar el archivo index.html, o bien ejecutar el sitio desde https://hmfarias.github.io/JavaScript-Proyect-RFSeguridad/index.html
 
 
-### Instalación (en caso de que se opte por bajar el proyecto a una ubicación local)
+### Instalación 
+(en caso de que se opte por bajar el proyecto a una ubicación local)
 
 1. ##### Clonar el proyecto del repositorio
 
@@ -192,11 +192,11 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   - **CERRAR:** cierra la ventana modal.
   
 
-
-- **LOGIN:**
-
-
-
+- **LOGIN:** Al seleccionar esta opción, se despliega una ventana modal donde se pide el usuario y la clave. Al presionar el boton LOGIN que se ubica abajo a la derecha de esta ventama modal, se realiza el logueo al sistema y se habilita la opción de la barra de navegacion ADMINISTRACION, dando acceso a la posibilidad de Liquidar el sueldo de un empleao e imprimir o descargar el recibo.
+  Una vez producido el acceso al sistema, esta opción LOGIN queda deshabilitada hasta que se selecciones CERRAR SESION ubicada en el menú desplegablte ADMINISTRACION.
+  **POR AHORA Y CON FINES DIDÁCTICOS, no existe un proceso de AUTENTICACIÓN formal, e ingresando cualquier usuario y cualquier clave el sistema permite el acceso.**
+  En el futuro, es en este login donde se realizara un proceso de autenticacion fuerte, contra alguna base de datos de usuarios.
+  
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 <!-- CONTRIBUTING -->
@@ -230,7 +230,7 @@ Distribuido bajo la licencia MIT. Consulte `LICENSE.txt` para obtener más infor
 
 Marcelo Farias - [+54 9 3512601888](https://twitter.com/your_username) - hmfarias7@gmail.com
 
-Link del Proyecto: [https://github.com/hmfarias/03-acamica-delilah](https://github.com/hmfarias/03-acamica-delilah)
+Link del Proyecto: [https://https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad](https://https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad)
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
@@ -241,15 +241,15 @@ Link del Proyecto: [https://github.com/hmfarias/03-acamica-delilah](https://gith
 <!-- [statuss-shield]: https://img.shields.io/badge/STATUS-Developing-green -->
 
 [statuss-shield]: https://img.shields.io/badge/STATUSS-finished-green
-[statuss-url]: https://github.com/hmfarias/03-acamica-delilah#readme
-[forks-shield]: https://img.shields.io/github/forks/hmfarias/03-acamica-delilah
-[forks-url]: https://github.com/hmfarias/03-acamica-delilah/network/members
-[stars-shield]: https://img.shields.io/github/stars/hmfarias/03-acamica-delilah
-[stars-url]: https://github.com/hmfarias/03-acamica-delilah/stargazers
-[issues-shield]: https://img.shields.io/github/issues/hmfarias/03-acamica-delilah
-[issues-url]: https://github.com/hmfarias/03-acamica-delilah/issues
+[statuss-url]: https://https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad#readme
+[forks-shield]: https://img.shields.io/github/forks/hmfarias/JavaScript-Proyect-RFSeguridad
+[forks-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/network/members
+[stars-shield]: https://img.shields.io/github/stars/hmfarias/JavaScript-Proyect-RFSeguridad
+[stars-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hmfarias/JavaScript-Proyect-RFSeguridad
+[issues-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg
-[license-url]: https://github.com/hmfarias/03-acamica-delilah/blob/master/LICENSE.txt
+[license-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hugo-marcelo-farias
 [product-screenshot]: https://user-images.githubusercontent.com/56005148/192166732-ecbcd321-b61d-4998-a114-5d616846ed8d.png
