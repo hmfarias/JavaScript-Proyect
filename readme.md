@@ -8,21 +8,19 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/hmfarias/03-acamica-delilah">
-    <img src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/logoRF.svg">
+    <img src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/LOGO-RF-SEGURIDAD.png" alt="Logo" width="175" height="270">
   </a>
-  <h2 align="center">RF SEGURDIAD INTEGRAL SRL</h2>
+  <h2 align="center">PROYECTO RF SEGURDIAD INTEGRAL SRL</h2>
 
   <p align="center">
-    ¡Una increíble API REST para administrar un restaurante de entrega de comida rápida!
+   Una página web institucional, con una sección para usuarios resgistrados con opciones administrativas como la liquidación de sueldo e impresión de recibos.
+   
     <br />
-    <a href="https://github.com/hmfarias/03-acamica-delilah"><strong>Explora los documentos »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/hmfarias/03-acamica-delilah">Ver repositorio</a>
+    <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/">Ver repositorio</a>
     ·
-    <a href="https://github.com/hmfarias/03-acamica-delilah/issues">Reportar un error</a>
+    <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/issues">Reportar un error</a>
     ·
-    <a href="https://github.com/hmfarias/03-acamica-delilah/issues">Solicitar función</a>
+    <a href="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/issues">Solicitar función</a>
   </p>
 </div>
 
