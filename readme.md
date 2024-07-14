@@ -8,10 +8,9 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/hmfarias/03-acamica-delilah">
-    <img src="https://user-images.githubusercontent.com/56005148/191755311-0408a1d6-c8c7-4956-959a-0b79166d0d9f.png" alt="Logo" width="310" height="270">
+    <img src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/logoRF.svg">
   </a>
-https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/edit/main/readme.md
-  <h2 align="center">Delilah Resto</h2>
+  <h2 align="center">RF SEGURDIAD INTEGRAL SRL</h2>
 
   <p align="center">
     ¡Una increíble API REST para administrar un restaurante de entrega de comida rápida!
