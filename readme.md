@@ -48,7 +48,7 @@
       <ul>
         <li><a href="#prerequisitos">Prerequisitos</a></li>
         <li><a href="#instalación">Instalación</a></li>
-        <li><a href="#documentación">Documentación</a></li>
+        <li><a href="#documentación-y-uso">Documentación y uso</a></li>
       </ul>
     </li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
