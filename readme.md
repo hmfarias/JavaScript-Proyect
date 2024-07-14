@@ -48,9 +48,9 @@
       <ul>
         <li><a href="#prerequisitos">Prerequisitos</a></li>
         <li><a href="#instalación">Instalación</a></li>
-        <li><a href="#documentación-y-uso">Documentación y uso</a></li>
       </ul>
     </li>
+    <li><a href="#documentación-y-uso">Documentación y uso</a></li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -147,7 +147,7 @@ git clone https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad.git
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
-### Documentación y uso
+## Documentación y uso
 
 Inicialmente, la página muestra una barra de navegación consitente en las siguiente opciones:
 - **INICIO:** Es la página principal en si misma. En ella se muestra información relacionada a la empresa, artículos sobre seguridad que se irán actualizando diariamente, baner animado con los principales clientes de la empresa y un footer con un botón para solicitar una cotización de servicio, datos de contacto y un mapa enlazado a Google Maps, con la ubiación de la oficina central de la empresa.
@@ -230,7 +230,7 @@ Distribuido bajo la licencia MIT. Consulte `LICENSE.txt` para obtener más infor
 
 ## Contacto
 
-Marcelo Farias - [+54 9 3512601888](https://twitter.com/your_username) - hmfarias7@gmail.com
+Marcelo Farias - [+54 9 3512601888] - hmfarias7@gmail.com
 
 Link del Proyecto: [https://https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad](https://https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad)
 
