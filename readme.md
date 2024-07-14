@@ -54,6 +54,12 @@
       <ul>
         <li><a href="#el-menu">El menú de la página</a></li>
         <li><a href="#opcion-ADMINISTRACION">La opción ADMINISTRACION</a></li>
+        <li><a href="#sobre-los-cálculos">Sobre los cálculos</a>
+          <ul>
+            <li><a href="#constantes">Constantes</a></li>
+            <li><a href="#conceptos">Conceptos</a></li>
+          </ul>
+        </li>
       </ul>    
     </li>
     <li><a href="#contribuyendo">Contribuyendo</a></li>
@@ -174,7 +180,7 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
 ### Opcion ADMINISTRACION
   **Uso**
   
-  La opción es un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
+  Se trata de un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
   
   1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación.
   Se despliega una página donde se debe seleccionar el MES y el AÑO sobre el que se desea trabajar.
@@ -205,10 +211,71 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
     
   - **CERRAR:** cierra la ventana modal.
   
-
-
-
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
+
+### Sobre los cálculos
+#### Constantes
+El sistema utiliza una serie de valores constantes, que se corresponden con los conceptos e importes de la escala de haberes del personal de Seguridad Privada:
+
+**ESCALA DE SUELDOS VIGENTE**
+
+**CONCEPTOS REMUNERATIVOS**
+- SUELDO_BASICO = 356000
+- PRESENTISMO = 112000
+- REMUNERATIVO = 123000
+- VIATICOS = 219000
+
+**CONCEPTOS NO REMUNERATIVOS**
+- NO_REMUNERATIVO = 30000
+
+**DESCUENTOS DE LEY - aplican solo sobre conceptos REMUNERATIVOS**
+- PORCE_JUBILACION = 0.11
+- PORCE_LEY19032 = 0.03
+- PORCE_OBRA_SOCIAL = 0.03
+- PORCE_SUVICO = 0.03
+- PORCE_APORTE_SOLIDARIO = 0.02
+
+**Array de objetos**
+- Array de objetos de EMPLEADOS
+- Array de objetos de COBERTURAS
+
+#### Conceptos
+En base al período seleccionado (AÑO y MES), y a la cantidad de horas efectivamente cubiertas, el sistema calcula cada uno de los concpetos.
+
+- **HORAS BASE DEL MES:** 
+ En los meses de 30 días las horas base son 208.
+   * En los meses de 31 días las horas base son 216.
+   * En los meses de 28 días las horas base son 192.
+   * En los meses de 29 días las horas base son 200.
+   * Cuando el empleado trabaja las horas base del mes, le corresponde cobrar todos los conceptos integramente.
+   * Cuando el empleado NO trabaja las horas base del mes, le corresponde cobrar un PROPORCIONAL a las horas trabajadas
+   * Cuando el empleado supera las horas base del mes, el excedente se considera HORAS EXTRA
+
+- **DÍAS TRABAJADOS:** En base a las horas de trabajo efectivamente prestadas por el empleado, y teniendo en cuenta las horas base del mes, se calcula su equivalencia en días.
+  EJemplo: para un mes de 31 dias las horas base son 216. Si el empleado ha cubierto 216 horas la equivalencia en dias trabajados es 31. Si el empleado ha cubierto mas de 216 horas, lo que excede de las horas base son horas extra y si el empleado a cubierto menos de 216 se calcula su equivalencia en dias y se calculan sus haberes de manera proporcional.
+
+- **HORAS EXTRAS:** En base a las horas de trabajo efectivamente prestadas por el empleado, y teniendo en cuenta las horas base del mes, se calcula su equivalencia en horas extra.
+  EJemplo: para un mes de 31 dias las horas base son 216. Si el empleado ha cubierto mas de 216 horas, lo que excede de las horas base son horas extra.
+
+- **DEMAS CONCEPTOS DE LA ESCALA:** Si el empleado ha cubierto la totalidad de las horas base del mes, los conceptos se liquidan integramente. Si ha cubierto menos de las horas base, se calculan proporcionalemnte.
+
+- **ANTIGUEDAD:** En base al tiempo transcurrido entre el alta del empleado en la empresa y el período (mes / Año) que se esté procesando, se calcula la antiguedad del empleado. En base a ese tiempo, se calcula el concepto ANTIGUEDAD aplicando un porcentaje sobre el SUELDO BÁSICO + REMUNERATIVO DE ESCALA, siguiendo la siguiente tabla:
+   * Desde el año 1 al  5 corresponde un 2% por año
+   * Desde el año 6 al 10 corresponde un 1.5% por año
+   * Dese el año 11 en adelante corresponde un 1% por año
+ 
+- **FERIADOS:** En todos los meses, existen días feriados que se encuentran preestablecidos en el almanque. Si el empleado cubre servicio en alguno de estos días feriados, corresponde liquidarle el concepto FERIADOS.
+
+- **DESCUENTOS DE LEY:** Sobre los conceptos Remunerativos, se aplican los siguientes descuentos de Ley:
+  - JUBILACION 11%
+  - LEY 19032 = 3%
+  - OBRA SOCIAL = 3%
+  - ASOCIACION SINDICAL SUVICO = 3%
+  - APORTE SOLIDARIO = 2%
+ 
+<p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
+
+    
 <!-- CONTRIBUTING -->
 
 ## Contribuyendo
