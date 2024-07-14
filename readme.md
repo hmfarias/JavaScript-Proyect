@@ -60,7 +60,7 @@
 
 ## Sobre el Proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/hmfarias/03-acamica-delilah)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad)
 
 
 
@@ -252,30 +252,5 @@ Link del Proyecto: [https://https://github.com/hmfarias/JavaScript-Proyect-RFSeg
 [issues-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg
 [license-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/hugo-marcelo-farias
 [product-screenshot]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/screenShot.webp
-[nodejs]: https://img.shields.io/badge/nodeJS-347012?style=for-the-badge&logo=nodedotjs&logoColor=white
-[node-url]: https://nodejs.org/
-[nodemon]: https://img.shields.io/badge/nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=4F4D3F
-[nodemon-url]: https://nodemon.io/
-[express]: https://img.shields.io/badge/express-35495E?style=for-the-badge&logo=express&logoColor=white
-[express-url]: https://expressjs.com/
-[jsonweb]: https://img.shields.io/badge/JSON_Web_Token-4A4A55?style=for-the-badge&logo=jsonwebtokens&logoColor=white
-[jsonweb-url]: https://jwt.io/
-[ratelimit]: https://img.shields.io/badge/Rate_Limt-4A4A55?style=for-the-badge&logo=express&logoColor=white
-[ratelimit-url]: https://www.npmjs.com/package/express-rate-limit
-[xampp]: https://img.shields.io/badge/XAMPP-EFEEE5?style=for-the-badge&logo=xampp&logoColor=orange
-[xampp-url]: https://www.apachefriends.org/es/index.html
-[mysql]: https://img.shields.io/badge/MySQL-3E6E93?style=for-the-badge&logo=mysql&logoColor=orange
-[mysql-url]: https://www.mysql.com/
-[workbench]: https://img.shields.io/badge/MySQL_Workbench-orange?style=for-the-badge&logo=mysql&logoColor=blue
-[workbench-url]: https://www.mysql.com/products/workbench/
-[sequelize]: https://img.shields.io/badge/Sequelize-grey?style=for-the-badge&logo=sequelize&logoColor=52B0E6
-[sequelize-url]: https://sequelize.org/
-[postman]: https://img.shields.io/badge/Postman-orange?style=for-the-badge&logo=postman&logoColor=white
-[postman-url]: https://www.postman.com/
-[swagger]: https://img.shields.io/badge/Swagger-4F8C2E?style=for-the-badge&logo=swagger&logoColor=white
-[swagger-url]: https://swagger.io/
-[others]: https://img.shields.io/badge/Others-grey?style=for-the-badge
-[others-url]: https://github.com/hmfarias/03-acamica-delilah
+[others-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad
