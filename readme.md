@@ -185,10 +185,14 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   En el futuro, es en este login donde se realizara un proceso de autenticacion fuerte, contra alguna base de datos de usuarios.
   
 ### Opcion ADMINISTRACION
+<img alt="NavBar" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/administracion-screen-shoot.webp"/>
   **Uso**
   
   REQUIERE ESTAR LOGEADO COMO USUARIO AUTORIZADO - Se trata de un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
-  
+
+  #### Opcion LIQUIDACIÓN DE HABERES
+<img alt="NavBar" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/liquidacion-haberes-screen-shoot.webp"/>  
+
   1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación PARA LA MATERIA JAVASCRIPT dictada por Coderhouse.
   Se despliega una página donde se debe seleccionar el MES y el AÑO sobre el que se desea trabajar.
   
@@ -202,6 +206,8 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
 
   4- El sistema renderiza en la pantalla, la información de cada empleado. La acomoda en cards, con foto del empleado y el resto de la información completa del mismo.
 
+  <img alt="IMG pantalla liquidación de haberes" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/datos-empleados-screen-shoot.webp"/>
+
   5- Cada card tiene al pie el boton RECIBO, con un listener del evento CLICK configurado para que al presionarlo, se calcule la liquidación de sueldo de ese empleado, en base al período seleccionado y a la cantidad de horas de servicio que ha cubierto.
 
   6- El resultado del proceso se muestra en una ventana modal, donde se observa:
@@ -211,6 +217,8 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   - los datos del empleado,
   - los datos sobre la cobertura realizada por ese empleado
   - la liquidación de cada uno de los conceptos (remunerativos y no remunerativos) que conforman la escala de haberes vigente para los empleados de Seguridad Privada.
+
+<img alt="IMG pantalla liquidación de haberes" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/recibo-screen-shoot.webp"/>
 
   7- Al pié de la ventana modal, se despliegan tres botones:
   
