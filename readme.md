@@ -87,7 +87,7 @@ En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERE
 - **Bootstrap:** como marco de desarrollo front-end que facilita la creación de sitios web y aplicaciones web responsivas y móviles.
 - **Sweet Alert:** como biblioteca de JavaScript que facilita la creación de alertas y diálogos personalizados y estéticamente agradables en la aplicacion web.
 - **HTML2pdf** como biblioteca de JavaScript que permite convertir contenido HTML directamente en archivos PDF en el navegador web.
-
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
