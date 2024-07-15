@@ -166,6 +166,8 @@ git clone https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad.git
 ## Documentación y uso
 
 ### El menu
+<img alt="NavBar" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/navbar.webp"/>
+
 Inicialmente, la página muestra una barra de navegación consitente en las siguiente opciones:
 - **INICIO:** Es la página principal en si misma. En ella se muestra información relacionada a la empresa, artículos sobre seguridad que se irán actualizando diariamente, baner animado con los principales clientes de la empresa y un footer con un botón para solicitar una cotización de servicio, datos de contacto y un mapa enlazado a Google Maps, con la ubiación de la oficina central de la empresa.
   
@@ -335,4 +337,5 @@ Link del Proyecto: [https://https://github.com/hmfarias/JavaScript-Proyect-RFSeg
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg
 [license-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/master/LICENSE.txt
 [product-screenshot]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/screenShot.webp
+[product-screenshot-navbar]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/navbar.webp
 [others-url]: https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad
