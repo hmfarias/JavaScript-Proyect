@@ -8,7 +8,7 @@
 }
 
 .recibo {
-	font-size: 0.75rem;
+	font-size: 0.6rem;
 	max-width: 800px;
 	margin: auto;
 	padding: 10px;
@@ -65,6 +65,10 @@ td {
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
+}
+
+.card-text {
+	font-size: 0.75rem;
 }
 /* ---------------------------------------------------------*/
 /* END RECIBOS PAGE -----------------------------------------------*/
