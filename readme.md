@@ -52,7 +52,12 @@
     <li><a href="#documentación-y-uso">Documentación y uso</a>
       <ul>
         <li><a href="#el-menu">El menú de la página</a></li>
-        <li><a href="#opcion-ADMINISTRACION">La opción ADMINISTRACION - Objeto de la materia JAVASCRIPT dictada por CoderHouse</a></li>
+        <li><a href="#opción-ADMINISTRACION">La opción ADMINISTRACION - Objeto de la materia JAVASCRIPT dictada por CoderHouse</a>
+           <ul>
+            <li><a href="#Opción-LIQUIDACIÓN-DE-HABERES">Opción LIQUIDACIÓN DE HABERES</a></li>
+            <li><a href="#Opción-CERRAR-SESION">Opción CERRAR SESION</a></li>
+          </ul>
+        </li>
         <li><a href="#sobre-los-cálculos">Sobre los cálculos</a>
           <ul>
             <li><a href="#constantes">Constantes</a></li>
@@ -184,13 +189,13 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   **POR AHORA Y CON FINES DIDÁCTICOS, no existe un proceso de AUTENTICACIÓN formal, e ingresando cualquier usuario y cualquier clave el sistema permite el acceso.**
   En el futuro, es en este login donde se realizara un proceso de autenticacion fuerte, contra alguna base de datos de usuarios.
   
-### Opcion ADMINISTRACION
+### Opción ADMINISTRACION
 <img alt="NavBar" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/administracion-screen-shoot.webp"/>
   **Uso**
   
   REQUIERE ESTAR LOGEADO COMO USUARIO AUTORIZADO - Se trata de un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
 
-  #### Opcion LIQUIDACIÓN DE HABERES
+  #### Opción LIQUIDACIÓN DE HABERES
 <img alt="NavBar" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/liquidacion-haberes-screen-shoot.webp"/>  
 
   1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación PARA LA MATERIA JAVASCRIPT dictada por Coderhouse.
@@ -227,8 +232,14 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   - **DESCARGAR PDF:** descarga el recibo de sueldo del empleado, colocando como nómbre de archivo el AÑO, el MES y el NOMBRE DEL EMPLEAD. Ejemplo: si se se está trabajando con el mes 02 y el año 2024 en la card del empleado Juan López, al presionar el boton DESCARGAR PDF, se descargará el archivo 2024-02-Lopez Juan.pdf
     
   - **CERRAR:** cierra la ventana modal.
+
+ #### Opción CERRAR SESION
+ Cierra la sesión del usuario logueado. Rehabilita la opcion del menu LOGIN y deshabilita la opción del menú ADMINISTRACIÓN.
+ 
   
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
+
+
 
 ### Sobre los cálculos
 #### Constantes
