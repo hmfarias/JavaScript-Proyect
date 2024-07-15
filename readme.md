@@ -52,7 +52,7 @@
     <li><a href="#documentación-y-uso">Documentación y uso</a>
       <ul>
         <li><a href="#el-menu">El menú de la página</a></li>
-        <li><a href="#opcion-ADMINISTRACION">La opción ADMINISTRACION</a></li>
+        <li><a href="#opcion-ADMINISTRACION">La opción ADMINISTRACION - Objeto de la materia JAVASCRIPT dictada por CoderHouse</a></li>
         <li><a href="#sobre-los-cálculos">Sobre los cálculos</a>
           <ul>
             <li><a href="#constantes">Constantes</a></li>
@@ -181,7 +181,7 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   
   Se trata de un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
   
-  1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación.
+  1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación PARA LA MATERIA JAVASCRIPT dictada por Coderhouse.
   Se despliega una página donde se debe seleccionar el MES y el AÑO sobre el que se desea trabajar.
   
   2- Se dispone de dos botones:
