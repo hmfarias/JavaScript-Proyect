@@ -187,7 +187,7 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
 ### Opcion ADMINISTRACION
   **Uso**
   
-  Se trata de un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
+  REQUIERE ESTAR LOGEADO COMO USUARIO AUTORIZADO - Se trata de un menú dropdown que despliega dos opciones fundamentales: LIQUIDACION DE HABERES y CERRAR SESIÓN.
   
   1- Al seleccionar LIQUIDACION DE HABERES, se da inicio al simulador que es el objetivo fundamental de la presentación PARA LA MATERIA JAVASCRIPT dictada por Coderhouse.
   Se despliega una página donde se debe seleccionar el MES y el AÑO sobre el que se desea trabajar.
