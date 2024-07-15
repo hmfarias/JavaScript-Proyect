@@ -105,7 +105,7 @@ El proyecto RF Seguridad, consiste en una página web institucional, programada 
 #### Entregable
 
 El proyecto es sitio web interactivo, que utiliza JavaScript y simula distintos procesos administrativos de una empresa de Seguridad Privada, solucionando la tarea de liquidar los haberes del personal conforme a la escala de sueldo vigente para los trabajadores de seguridad privada y en función del mes y las horas de servicios efectivamente cubiertas por cada empleado.
-Se ha utilizado FETCH y JSON para obtener datos de la API Random User Gerator API https://randomuser.me y construir la base de datos de empleados; así como diversas herramientas de JavaScript como librerías, promesas y asincronía para controlar eventos en la interfáz y producir animaciones en respuesta.
+Se ha utilizado FETCH y JSON para obtener datos de la API Random User Gerator https://randomuser.me y construir la base de datos de empleados; así como diversas herramientas de JavaScript como librerías, promesas y asincronía para controlar eventos en la interfáz y producir animaciones en respuesta.
 
 Los entregables son:
 
@@ -132,7 +132,7 @@ Esta guía describe paso a paso cómo utilizar el sitio web de RF SEGURIDAD INTE
 
 ### Prerequisitos
 
-Antes de comenzar la instalación, es necesario tener:
+Antes de comenzar la instalación, es necesario:
 
 - Contar con un IDE con capacidad para ejecutar el archivo index.html, o bien ejecutar el sitio desde https://hmfarias.github.io/JavaScript-Proyect-RFSeguridad/index.html
 
