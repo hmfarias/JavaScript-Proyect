@@ -80,13 +80,15 @@ En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERE
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
 ### Construido con
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) (HyperText Markup Language) como lenguaje de marcación de hipertéxto estándar utilizado para crear y diseñar páginas web.
+<img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/> (HyperText Markup Language) como lenguaje de marcación de hipertéxto estándar utilizado para crear y diseñar páginas web.
 
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) (Cascading Style Sheets, Level 3) como lenguaje de diseño gráfico utilizado para controlar el aspecto visual de las páginas web, separando el contenido (HTML) de la presentación visual (CSS).
+<img alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/> (Cascading Style Sheets, Level 3) como lenguaje de diseño gráfico utilizado para controlar el aspecto visual de las páginas web, separando el contenido (HTML) de la presentación visual (CSS).
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) como lenguaje de programación interpretado, de alto nivel y dinámico. Se ejecuta en el navegador del cliente, lo que permite la creación de páginas web interactivas y dinámicas. 
+<img alt="SASS" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"/> como preprocesador de CSS que extiende las capacidades de CSS con características adicionales, como variables, anidamiento, mixins, y funciones. 
 
-![Static Badge](https://img.shields.io/badge/BootStrap-darkviolet?style=for-the-badge&cacheSeconds=https%3A%2F%2Fgetbootstrap.com%2F) como marco de desarrollo front-end que facilita la creación de sitios web y aplicaciones web responsivas y móviles.
+<img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> como lenguaje de programación interpretado, de alto nivel y dinámico. Se ejecuta en el navegador del cliente, lo que permite la creación de páginas web interactivas y dinámicas. 
+
+<img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/> como marco de desarrollo front-end que facilita la creación de sitios web y aplicaciones web responsivas y móviles.
 
 ![Static Badge](https://img.shields.io/badge/Sweer%20Alert-green?style=for-the-badge) como biblioteca de JavaScript que facilita la creación de alertas y diálogos personalizados y estéticamente agradables en la aplicacion web.
 
@@ -97,7 +99,7 @@ En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERE
 
 ### Descripción general
 
-El proyecto RF Seguridad, consiste en una página web institucional, programada con HTML, CSS y BootStrap en lo referente a las opciones de la barra de navegacion NOSOTROS, SERVICIOS Y CONTACTO; y para la opción ADMINISTRACIÓN y LOGIN, se ha agregado programación con JavaScript, dotándolas de interactividad y comportamiento dinámico,
+El proyecto RF Seguridad, consiste en una página web institucional, programada con HTML, CSS y BootStrap en lo referente a las opciones de la barra de navegacion NOSOTROS, SERVICIOS Y CONTACTO; y para la opción ADMINISTRACIÓN y LOGIN, se ha agregado programación con JavaScript, dotándolas de interactividad y comportamiento dinámico (objetivo de la materia JavaScript dictada por Coderhouse)
 
 
 #### Entregable
