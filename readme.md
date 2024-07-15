@@ -185,8 +185,10 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
   Se despliega una página donde se debe seleccionar el MES y el AÑO sobre el que se desea trabajar.
   
   2- Se dispone de dos botones:
-  **BUSCAR RECIBOS:** el cual requiere que se haya rellenado los campos MES y AÑO del formulario.
-  **CARGAR ULTIMO LOTE:** trae desde el LOCAL STORAGE, las claves MES y AÑO y las toma como seleccionadas para trabajar con ese período. Esto resulta válido, en el caso de que el sistema se haya utilizado con anterioridad, caso contrario el botón estará deshabilitado.
+  
+  -**BUSCAR RECIBOS:** el cual requiere que se haya rellenado los campos MES y AÑO del formulario.
+  
+  -**CARGAR ULTIMO LOTE:** trae desde el LOCAL STORAGE, las claves MES y AÑO y las toma como seleccionadas para trabajar con ese período. Esto resulta válido, en el caso de que el sistema se haya utilizado con anterioridad, caso contrario el botón estará deshabilitado.
   
   3- Una vez seleccionado el MES y el AÑO, el sistema comienza el proceso de generación de la base de datos de empleados y las diferentes coberturas de servicio (random), que cada empleado a realizado para ese período.
 
