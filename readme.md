@@ -86,7 +86,7 @@ En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERE
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) como lenguaje de programación interpretado, de alto nivel y dinámico. Se ejecuta en el navegador del cliente, lo que permite la creación de páginas web interactivas y dinámicas. 
 
-https://ziadoua.github.io/m3-Markdown-Badges/badges/Bootstrap/bootstrap1.svg como marco de desarrollo front-end que facilita la creación de sitios web y aplicaciones web responsivas y móviles.
+![BOOTSTRAP](https://ziadoua.github.io/m3-Markdown-Badges/badges/Bootstrap/bootstrap1.svg) como marco de desarrollo front-end que facilita la creación de sitios web y aplicaciones web responsivas y móviles.
 
 - **Sweet Alert:** como biblioteca de JavaScript que facilita la creación de alertas y diálogos personalizados y estéticamente agradables en la aplicacion web.
 - **HTML2pdf** como biblioteca de JavaScript que permite convertir contenido HTML directamente en archivos PDF en el navegador web.
