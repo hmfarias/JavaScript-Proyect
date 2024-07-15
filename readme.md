@@ -233,6 +233,8 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
     
   - **CERRAR:** cierra la ventana modal.
 
+<p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
+
  #### Opción CERRAR SESION
  Cierra la sesión del usuario logueado. Rehabilita la opcion del menu LOGIN y deshabilita la opción del menú ADMINISTRACIÓN.
  
