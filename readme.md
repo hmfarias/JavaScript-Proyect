@@ -79,7 +79,7 @@
 
 
 
-El proyecto RF SEGURIDAD INTEGRAL SRL, consiste en una página web institucional, con información relacionada a la empresa de Seguridad Privada RF SEGURIDAD, y con una sección para usuarios registrados, en donde se cuenta con opciones de manejo administrativo.
+El proyecto RF SEGURIDAD INTEGRAL SRL, consiste en una página web institucional, con información relacionada a la empresa de Seguridad Privada RF SEGURIDAD, y con una sección para usuarios registrados, en donde se cuenta con opciones de manejo administrativo. Esta última opción es la que corresponde a lo trabajado en la materia JavaScript de CoderHouse, el resto corresponde a lo trabajado en la materia Desarrollo Web de Coderhouse.
 En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERES, en la cual se ha programado un simulador, que consume dados de la API Random User Gerator API https://randomuser.me, para generar la base de datos de empleados y las diferentes coberturas de servicios efectuadas durante el año 2024 (enero a junio).
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
