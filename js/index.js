@@ -1,4 +1,4 @@
-import { inactivityTime } from './functions.js';
+import { inactivityTimeForPages } from './functions.js';
 
 // document.addEventListener('DOMContentLoaded', () => {
 const loginButton = document.getElementById('loginButton');
@@ -16,7 +16,7 @@ if (loginStatus) {
 	loginButton.classList.remove('enabled');
 	loginButton.classList.add('disabled');
 	// Llamo a la función que controla inactividad
-	inactivityTime();
+	inactivityTimeForPages();
 }
 
 //Se abre la ventana modal cuando se hace click en la opción del menú "Login"
