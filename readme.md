@@ -80,7 +80,10 @@
 
 
 El proyecto RF SEGURIDAD INTEGRAL SRL, consiste en una página web institucional, con información relacionada a la empresa de Seguridad Privada RF SEGURIDAD, y con una sección para usuarios registrados, en donde se cuenta con opciones de manejo administrativo. Esta última opción es la que corresponde a lo trabajado en la materia JavaScript de CoderHouse, el resto corresponde a lo trabajado en la materia Desarrollo Web de Coderhouse.
+
 En el estado actual del proyecto, se cuenta con la opción LIQUIDACION DE HABERES, en la cual se ha programado un simulador, que consume dados de la API Random User Gerator API https://randomuser.me, para generar la base de datos de empleados y las diferentes coberturas de servicios efectuadas durante el año 2024 (enero a junio).
+
+La página permite hacer LOGIN para poder usar las opciones de ADMINISTRACION y activa un **TIMEOUT**. Al transcurrir 2 minutos de inactividad, la página mostrará un mensaje indicando esa situación y consediendo 10 segundos antes de cerrar la sesión. Si el usuario realiza alguna acción, esa cuenta regresiva se suspende y no se cierra la sesión.
 
 <p align="right">(<a href="#tabla-de-contenidos">volver</a>)</p>
 
@@ -187,7 +190,9 @@ Inicialmente, la página muestra una barra de navegación consitente en las sigu
 - **LOGIN:** Al seleccionar esta opción, se despliega una ventana modal donde se pide el usuario y la clave. Al presionar el boton LOGIN que se ubica abajo a la derecha de esta ventama modal, se realiza el logueo al sistema y se habilita la opción de la barra de navegacion ADMINISTRACION, dando acceso a la posibilidad de Liquidar el sueldo de un empleao e imprimir o descargar el recibo.
   Una vez producido el acceso al sistema, esta opción LOGIN queda deshabilitada hasta que se selecciones CERRAR SESION ubicada en el menú desplegablte ADMINISTRACION.
   **POR AHORA Y CON FINES DIDÁCTICOS, no existe un proceso de AUTENTICACIÓN formal, e ingresando cualquier usuario y cualquier clave el sistema permite el acceso.**
-  En el futuro, es en este login donde se realizara un proceso de autenticacion fuerte, contra alguna base de datos de usuarios.
+  En el futuro, es en este login donde se realizara un proceso de autenticacion contra alguna base de datos de usuarios.
+  
+  **TIMEOUT** transcurridos 2 minutos de inactividad, la página mostrará un mensaje indicando esa situación y consediendo 10 segundos antes de cerrar la sesión. Si el usuario realiza alguna acción, esa cuenta regresiva se suspende y no se cierra la sesión.
   
 ### Opción ADMINISTRACION
 <img alt="NavBar" src="https://github.com/hmfarias/JavaScript-Proyect-RFSeguridad/blob/main/assets/images/administracion-screen-shoot.webp"/>
