@@ -25,6 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		event.preventDefault();
 		//Acá se agregaría la lógica de autenticación mas fuerte
 		//Para el trabajo práctico voy a asumir que el login es exitoso
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 1500,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+				toast.onmouseenter = Swal.stopTimer;
+				toast.onmouseleave = Swal.resumeTimer;
+			},
+		});
+		Toast.fire({
+			icon: 'success',
+			title: 'Signed in successfully',
+		});
 
 		loginModal.hide();
 		navItemAdmin.classList.remove('disabled');
@@ -32,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		loginButton.classList.remove('enabled');
 		loginButton.classList.add('disabled');
 		localStorage.setItem('login', true);
+
 		// navItemAdmin.href = '#';
 	});
 

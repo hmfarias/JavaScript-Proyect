@@ -936,6 +936,85 @@ const numeroALetras = (num) => {
 
 //************************************************************************************** */
 
+//************************************************************************************** */
+/**
+ * *FUNCION inactivityTime verifica si hay inactividad del usuario y produce el cierre de la sesión
+ */
+let inactivityTime = () => {
+	let logoutTimeout;
+
+	// Resetea el temporizador de inactividad
+	const resetTimer = () => {
+		clearTimeout(logoutTimeout);
+		logoutTimeout = setTimeout(logout, 100000); // 300000ms = 5 minutos
+	};
+
+	// Eventos que indican actividad del usuario
+	window.onload = resetTimer;
+	document.onmousemove = resetTimer;
+	document.onkeydown = resetTimer;
+	document.onclick = resetTimer;
+	document.onscroll = resetTimer;
+};
+//************************************************************************************** */
+
+//************************************************************************************** */
+/**
+ * *FUNCION logout muestra un aviso indicando que la sesión se cerrará en 10 segundos
+ * Si el usuario no realiza actividad, se cierra la sesión
+ */
+const logout = () => {
+	let countdownTimer;
+	let idleTime = 10000; // 5 segundos
+
+	const startIdleCountdown = () => {
+		Swal.fire({
+			title: 'Inactividad detectada',
+			html: 'La sesión se cerrará en <b></b> segundos.',
+			timer: idleTime,
+			timerProgressBar: true,
+			didOpen: () => {
+				const content = Swal.getHtmlContainer();
+				const b = content.querySelector('b');
+				countdownTimer = setInterval(() => {
+					b.textContent = Math.ceil(Swal.getTimerLeft() / 1000);
+				}, 1000);
+			},
+			willClose: () => {
+				clearInterval(countdownTimer);
+			},
+		}).then((result) => {
+			if (result.dismiss === Swal.DismissReason.timer) {
+				// Acción cuando la cuenta regresiva llega a cero
+				sessionExpired();
+			}
+		});
+	};
+
+	const sessionExpired = () => {
+		// Acción cuando la sesión expira
+
+		localStorage.removeItem('login');
+		document.getElementById('nav-item-admin').classList.remove('enabled');
+		document.getElementById('nav-item-admin').classList.add('disabled');
+		document.getElementById('loginButton').classList.remove('disabled');
+		document.getElementById('loginButton').classList.add('enabled');
+		window.location.href = '../index.html';
+	};
+
+	const resetIdleTimer = () => {
+		clearTimeout(idleTimeout);
+		return;
+	};
+
+	let idleTimeout = setTimeout(startIdleCountdown, idleTime);
+
+	document.addEventListener('mousemove', resetIdleTimer);
+	document.addEventListener('keypress', resetIdleTimer);
+	document.addEventListener('click', resetIdleTimer);
+};
+//************************************************************************************** */
+
 //FIN FUNCIONES A UTILIZAR ------------------------------------------------------------------------------------------
 export {
 	renderizaEmpleados,
@@ -949,4 +1028,5 @@ export {
 	formatearNumero,
 	calcularTiempoAntiguedad,
 	calcularPorcentajeAntiguedad,
+	inactivityTime,
 };
