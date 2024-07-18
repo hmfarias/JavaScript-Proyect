@@ -1,6 +1,10 @@
 import { inactivityTimeForPages } from './functions.js';
 
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+	localStorage.removeItem('login');
+	navItemAdmin.classList.remove('enabled');
+	navItemAdmin.classList.add('disabled');
+});
 const loginButton = document.getElementById('loginButton');
 const logoutButton = document.getElementById('logoutButton');
 const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
@@ -42,7 +46,7 @@ loginForm.addEventListener('submit', (event) => {
 	});
 	Toast.fire({
 		icon: 'success',
-		title: 'Signed in successfully',
+		title: 'Sesión iniciada con éxito',
 	});
 
 	loginModal.hide();
@@ -63,4 +67,3 @@ logoutButton.addEventListener('click', () => {
 	navItemAdmin.classList.remove('enabled');
 	navItemAdmin.classList.add('disabled');
 });
-// });
