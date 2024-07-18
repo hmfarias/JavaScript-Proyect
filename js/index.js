@@ -1,5 +1,3 @@
-import { inactivityTimeForPages } from './functions.js';
-
 document.addEventListener('DOMContentLoaded', () => {
 	localStorage.removeItem('login');
 	navItemAdmin.classList.remove('enabled');
@@ -19,8 +17,6 @@ if (loginStatus) {
 	navItemAdmin.classList.add('enabled');
 	loginButton.classList.remove('enabled');
 	loginButton.classList.add('disabled');
-	// Llamo a la función que controla inactividad
-	inactivityTimeForPages();
 }
 
 //Se abre la ventana modal cuando se hace click en la opción del menú "Login"
@@ -55,10 +51,6 @@ loginForm.addEventListener('submit', (event) => {
 	loginButton.classList.remove('enabled');
 	loginButton.classList.add('disabled');
 	localStorage.setItem('login', true);
-	// Llamo a la función que controla inactividad
-	inactivityTime();
-
-	// navItemAdmin.href = '#';
 });
 
 //Acá manejo lo que pasa al clickear la opcion de cerrar sesión
