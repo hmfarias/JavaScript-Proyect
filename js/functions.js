@@ -99,7 +99,7 @@ const renderizaEmpleados = (mes, ano) => {
 							EMAIL: ${element.email} <br />
 							SUVICO: ${element.suvico} <br />
 							------------------- <br />
-							COBERTURA MES:${mes} AÑO:${ano} <br />
+							<b>COBERTURA:  MES:${mes}  AÑO:${ano}</b> <br />
 							HORAS TRABAJADAS:  ${element.horas}<br />
 							FERIADOS TRABAJADOS: ${element.feriados}<br />
 							HORAS NOCTURNAS: ${element.horasNocturnas} <br />
