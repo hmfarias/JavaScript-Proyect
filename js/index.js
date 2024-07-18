@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-	localStorage.removeItem('login');
-	navItemAdmin.classList.remove('enabled');
-	navItemAdmin.classList.add('disabled');
-});
 const loginButton = document.getElementById('loginButton');
 const logoutButton = document.getElementById('logoutButton');
 const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
@@ -58,4 +53,6 @@ logoutButton.addEventListener('click', () => {
 	localStorage.removeItem('login');
 	navItemAdmin.classList.remove('enabled');
 	navItemAdmin.classList.add('disabled');
+	loginButton.classList.remove('disbled');
+	loginButton.classList.add('enabled');
 });
