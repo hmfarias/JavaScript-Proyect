@@ -946,7 +946,8 @@ let inactivityTime = () => {
 	// Resetea el temporizador de inactividad
 	const resetTimer = () => {
 		clearTimeout(logoutTimeout);
-		logoutTimeout = setTimeout(logout, 6000); // 300000ms = 5 minutos
+		// console.log('reset timer');
+		logoutTimeout = setTimeout(logout, 120000); // 300000ms = 5 minutos  / 120000 = 2 minutos
 	};
 
 	// Eventos que indican actividad del usuario
